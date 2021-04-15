@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017BE2628B8870030BA9F /* AppDelegate.swift */; };
+		783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C02628B8870030BA9F /* SceneDelegate.swift */; };
+		783017C32628B8870030BA9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C22628B8870030BA9F /* ViewController.swift */; };
+		783017C62628B8870030BA9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783017C42628B8870030BA9F /* Main.storyboard */; };
+		783017C82628B88D0030BA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783017C72628B88D0030BA9F /* Assets.xcassets */; };
+		783017CB2628B88D0030BA9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783017C92628B88D0030BA9F /* LaunchScreen.storyboard */; };
+		783017D62628B88D0030BA9F /* ArrimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017D52628B88D0030BA9F /* ArrimoTests.swift */; };
+		783017E12628B88E0030BA9F /* ArrimoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017E02628B88E0030BA9F /* ArrimoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		783017D22628B88D0030BA9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 783017B32628B8870030BA9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 783017BA2628B8870030BA9F;
+			remoteInfo = Arrimo;
+		};
+		783017DD2628B88D0030BA9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 783017B32628B8870030BA9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 783017BA2628B8870030BA9F;
+			remoteInfo = Arrimo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		783017BB2628B8870030BA9F /* Arrimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arrimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		783017BE2628B8870030BA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		783017C02628B8870030BA9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		783017C22628B8870030BA9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		783017C52628B8870030BA9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		783017C72628B88D0030BA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		783017CA2628B88D0030BA9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		783017CC2628B88D0030BA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		783017D12628B88D0030BA9F /* ArrimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArrimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		783017D52628B88D0030BA9F /* ArrimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrimoTests.swift; sourceTree = "<group>"; };
+		783017D72628B88D0030BA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		783017DC2628B88D0030BA9F /* ArrimoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArrimoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		783017E02628B88E0030BA9F /* ArrimoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrimoUITests.swift; sourceTree = "<group>"; };
+		783017E22628B88E0030BA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		783017B82628B8870030BA9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		783017CE2628B88D0030BA9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		783017D92628B88D0030BA9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		783017B22628B8870030BA9F = {
+			isa = PBXGroup;
+			children = (
+				783017BD2628B8870030BA9F /* Arrimo */,
+				783017D42628B88D0030BA9F /* ArrimoTests */,
+				783017DF2628B88D0030BA9F /* ArrimoUITests */,
+				783017BC2628B8870030BA9F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		783017BC2628B8870030BA9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				783017BB2628B8870030BA9F /* Arrimo.app */,
+				783017D12628B88D0030BA9F /* ArrimoTests.xctest */,
+				783017DC2628B88D0030BA9F /* ArrimoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		783017BD2628B8870030BA9F /* Arrimo */ = {
+			isa = PBXGroup;
+			children = (
+				783017BE2628B8870030BA9F /* AppDelegate.swift */,
+				783017C02628B8870030BA9F /* SceneDelegate.swift */,
+				783017C22628B8870030BA9F /* ViewController.swift */,
+				783017C42628B8870030BA9F /* Main.storyboard */,
+				783017C72628B88D0030BA9F /* Assets.xcassets */,
+				783017C92628B88D0030BA9F /* LaunchScreen.storyboard */,
+				783017CC2628B88D0030BA9F /* Info.plist */,
+			);
+			path = Arrimo;
+			sourceTree = "<group>";
+		};
+		783017D42628B88D0030BA9F /* ArrimoTests */ = {
+			isa = PBXGroup;
+			children = (
+				783017D52628B88D0030BA9F /* ArrimoTests.swift */,
+				783017D72628B88D0030BA9F /* Info.plist */,
+			);
+			path = ArrimoTests;
+			sourceTree = "<group>";
+		};
+		783017DF2628B88D0030BA9F /* ArrimoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				783017E02628B88E0030BA9F /* ArrimoUITests.swift */,
+				783017E22628B88E0030BA9F /* Info.plist */,
+			);
+			path = ArrimoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		783017BA2628B8870030BA9F /* Arrimo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 783017E52628B88E0030BA9F /* Build configuration list for PBXNativeTarget "Arrimo" */;
+			buildPhases = (
+				783017B72628B8870030BA9F /* Sources */,
+				783017B82628B8870030BA9F /* Frameworks */,
+				783017B92628B8870030BA9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arrimo;
+			productName = Arrimo;
+			productReference = 783017BB2628B8870030BA9F /* Arrimo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		783017D02628B88D0030BA9F /* ArrimoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 783017E82628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoTests" */;
+			buildPhases = (
+				783017CD2628B88D0030BA9F /* Sources */,
+				783017CE2628B88D0030BA9F /* Frameworks */,
+				783017CF2628B88D0030BA9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				783017D32628B88D0030BA9F /* PBXTargetDependency */,
+			);
+			name = ArrimoTests;
+			productName = ArrimoTests;
+			productReference = 783017D12628B88D0030BA9F /* ArrimoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		783017DB2628B88D0030BA9F /* ArrimoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 783017EB2628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoUITests" */;
+			buildPhases = (
+				783017D82628B88D0030BA9F /* Sources */,
+				783017D92628B88D0030BA9F /* Frameworks */,
+				783017DA2628B88D0030BA9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				783017DE2628B88D0030BA9F /* PBXTargetDependency */,
+			);
+			name = ArrimoUITests;
+			productName = ArrimoUITests;
+			productReference = 783017DC2628B88D0030BA9F /* ArrimoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		783017B32628B8870030BA9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					783017BA2628B8870030BA9F = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					783017D02628B88D0030BA9F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 783017BA2628B8870030BA9F;
+					};
+					783017DB2628B88D0030BA9F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 783017BA2628B8870030BA9F;
+					};
+				};
+			};
+			buildConfigurationList = 783017B62628B8870030BA9F /* Build configuration list for PBXProject "Arrimo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 783017B22628B8870030BA9F;
+			productRefGroup = 783017BC2628B8870030BA9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				783017BA2628B8870030BA9F /* Arrimo */,
+				783017D02628B88D0030BA9F /* ArrimoTests */,
+				783017DB2628B88D0030BA9F /* ArrimoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		783017B92628B8870030BA9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783017CB2628B88D0030BA9F /* LaunchScreen.storyboard in Resources */,
+				783017C82628B88D0030BA9F /* Assets.xcassets in Resources */,
+				783017C62628B8870030BA9F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		783017CF2628B88D0030BA9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		783017DA2628B88D0030BA9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		783017B72628B8870030BA9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783017C32628B8870030BA9F /* ViewController.swift in Sources */,
+				783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */,
+				783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		783017CD2628B88D0030BA9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783017D62628B88D0030BA9F /* ArrimoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		783017D82628B88D0030BA9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783017E12628B88E0030BA9F /* ArrimoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		783017D32628B88D0030BA9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 783017BA2628B8870030BA9F /* Arrimo */;
+			targetProxy = 783017D22628B88D0030BA9F /* PBXContainerItemProxy */;
+		};
+		783017DE2628B88D0030BA9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 783017BA2628B8870030BA9F /* Arrimo */;
+			targetProxy = 783017DD2628B88D0030BA9F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		783017C42628B8870030BA9F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				783017C52628B8870030BA9F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		783017C92628B88D0030BA9F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				783017CA2628B88D0030BA9F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		783017E32628B88E0030BA9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		783017E42628B88E0030BA9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		783017E62628B88E0030BA9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZH735L9VC9;
+				INFOPLIST_FILE = Arrimo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.Arrimo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		783017E72628B88E0030BA9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZH735L9VC9;
+				INFOPLIST_FILE = Arrimo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.Arrimo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		783017E92628B88E0030BA9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZH735L9VC9;
+				INFOPLIST_FILE = ArrimoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arrimo.app/Arrimo";
+			};
+			name = Debug;
+		};
+		783017EA2628B88E0030BA9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZH735L9VC9;
+				INFOPLIST_FILE = ArrimoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arrimo.app/Arrimo";
+			};
+			name = Release;
+		};
+		783017EC2628B88E0030BA9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZH735L9VC9;
+				INFOPLIST_FILE = ArrimoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Arrimo;
+			};
+			name = Debug;
+		};
+		783017ED2628B88E0030BA9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZH735L9VC9;
+				INFOPLIST_FILE = ArrimoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Arrimo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		783017B62628B8870030BA9F /* Build configuration list for PBXProject "Arrimo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				783017E32628B88E0030BA9F /* Debug */,
+				783017E42628B88E0030BA9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		783017E52628B88E0030BA9F /* Build configuration list for PBXNativeTarget "Arrimo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				783017E62628B88E0030BA9F /* Debug */,
+				783017E72628B88E0030BA9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		783017E82628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				783017E92628B88E0030BA9F /* Debug */,
+				783017EA2628B88E0030BA9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		783017EB2628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				783017EC2628B88E0030BA9F /* Debug */,
+				783017ED2628B88E0030BA9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 783017B32628B8870030BA9F /* Project object */;
+}
