@@ -12,13 +12,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
-        label.text = "Hi there"
+        label.text = "Welcome".localized()
         view.addSubview(label)
+        label.textColor = UIColor.darkBlue
         label.center = view.center
-        label.font = UIFont.kufam(size: 24)
+        label.font = UIFont.tekturBold(size: 32)
+        label.textAlignment = NSTextAlignment.center
         
         // Do any additional setup after loading the view.
     }
