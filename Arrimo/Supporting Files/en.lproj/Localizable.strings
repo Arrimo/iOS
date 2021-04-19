@@ -3,7 +3,6 @@
   Arrimo
 
   Created by JJ Zapata on 4/16/21.
-  
 */
 
 "Welcome" = "Welcome";
@@ -14,4 +13,6 @@
 "Send Link" = "Send Link";
 "Success" = "Success";
 "A password reset link has been sent." = "A password reset link has been sent.";
-
+"Error" = "Error";
+"Please fill in the email text field." = "Please fill in the email text field";
+"Please fill in all fields." = "Please fill in all fields.";

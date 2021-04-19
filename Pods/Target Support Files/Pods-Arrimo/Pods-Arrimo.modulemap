@@ -1,0 +1,6 @@
+framework module Pods_Arrimo {
+  umbrella header "Pods-Arrimo-umbrella.h"
+
+  export *
+  module * { export * }
+}

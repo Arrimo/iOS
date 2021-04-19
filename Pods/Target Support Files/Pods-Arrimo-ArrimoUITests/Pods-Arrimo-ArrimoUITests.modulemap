@@ -1,0 +1,6 @@
+framework module Pods_Arrimo_ArrimoUITests {
+  umbrella header "Pods-Arrimo-ArrimoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
