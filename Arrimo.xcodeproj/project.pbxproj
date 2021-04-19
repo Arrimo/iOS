@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,6 +100,7 @@
 		78608643262DA98D009AC4DC /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		78608648262DA9E1009AC4DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		78608666262E0A5B009AC4DC /* Arrimo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arrimo.entitlements; sourceTree = "<group>"; };
 		78A1F0EF262986310071958C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F4262986420071958C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F8262986540071958C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 				E7FB145EC7EBA6E192E26213 /* Pods-ArrimoTests.debug.xcconfig */,
 				3AA43B3FBC993C9B9CD456E8 /* Pods-ArrimoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,6 +177,7 @@
 		783017BD2628B8870030BA9F /* Arrimo */ = {
 			isa = PBXGroup;
 			children = (
+				78608666262E0A5B009AC4DC /* Arrimo.entitlements */,
 				783017F62628B9BA0030BA9F /* Models */,
 				783017F52628B9B00030BA9F /* Views */,
 				783017F42628B9960030BA9F /* Controllers */,
@@ -779,13 +780,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arrimo/Arrimo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZH735L9VC9;
 				INFOPLIST_FILE = "Arrimo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.001;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.Arrimo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -799,13 +803,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arrimo/Arrimo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZH735L9VC9;
 				INFOPLIST_FILE = "Arrimo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.001;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.Arrimo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

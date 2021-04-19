@@ -80,6 +80,7 @@ class ForgotPasswordController: UIViewController, UITextFieldDelegate {
             // throw sign in function
                 // haptics
                 // alerts
+            simpleAlert(title: "Success".localized(), message: "A password reset link has been sent.".localized())
         } else {
             hideLoading()
             addErrorNotification()
