@@ -118,17 +118,17 @@ class SignInController: UIViewController, UITextFieldDelegate {
         passwordTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
         
-        view.addSubview(forgotPasswordButton)
-        forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 19).isActive = true
-        forgotPasswordButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        forgotPasswordButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        forgotPasswordButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        
         view.addSubview(mainButton)
-        mainButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 36).isActive = true
+        mainButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 19).isActive = true
         mainButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
         mainButton.heightAnchor.constraint(equalToConstant: 47).isActive = true
         mainButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        
+        view.addSubview(forgotPasswordButton)
+        forgotPasswordButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: 19).isActive = true
+        forgotPasswordButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
+        forgotPasswordButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        forgotPasswordButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
     }
     
     // MARK: - Private Functions
