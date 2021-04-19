@@ -9,10 +9,6 @@ import UIKit
 
 class SignInController: UIViewController, UITextFieldDelegate {
     
-    // MARK: - Constants
-    
-    // MARK: - Variables
-    
     // MARK: - View Objects
     
     private let appIcon : UIImageView = {
@@ -37,7 +33,7 @@ class SignInController: UIViewController, UITextFieldDelegate {
         let textField = MainTextField(placeholderString: "Email".localized())
         textField.keyboardType = UIKeyboardType.emailAddress
         textField.autocapitalizationType = UITextAutocapitalizationType.none
-        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.autocorrectionType = UITextAutocorrectionType.yes
         return textField
     }()
     
@@ -73,6 +69,8 @@ class SignInController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        autoLogin()
         
         view.backgroundColor = .white
         
@@ -133,10 +131,27 @@ class SignInController: UIViewController, UITextFieldDelegate {
         mainButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
     }
     
+    // MARK: - Private Functions
+    
+    func autoLogin() {
+        //
+    }
+    
     // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
+        // start loading
+        showLoading()
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            hideLoading()
+            addSuccessNotification()
+            simpleAlert(title: "Success".localized(), message: "A password reset link has been sent.".localized())
+        } else {
+            hideLoading()
+            addErrorNotification()
+            simpleAlert(title: "Error".localized(), message: "Please fill in all fields.".localized())
+        }
     }
     
     @objc func forgotPasswordPressed() {

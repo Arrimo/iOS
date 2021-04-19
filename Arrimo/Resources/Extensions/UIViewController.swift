@@ -5,6 +5,7 @@
 //  Created by JJ Zapata on 4/19/21.
 //
 
+import MBProgressHUD
 import Foundation
 import UIKit
 
@@ -15,6 +16,26 @@ extension UIViewController {
     func add3DMotion(withFeedbackStyle style: UIImpactFeedbackGenerator.FeedbackStyle) {
         let generator = UIImpactFeedbackGenerator(style: style)
         generator.impactOccurred(intensity: 1.0)
+    }
+    
+    func addErrorNotification() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.error)
+    }
+    
+    func addSuccessNotification() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)
+    }
+    
+    // MARK: - Dialog
+    
+    func showLoading() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
+    func hideLoading() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     // MARK: - Alerts

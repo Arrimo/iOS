@@ -38,6 +38,9 @@
 		7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */; };
 		78A1F0EE262986310071958C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A1F0F0262986310071958C /* Localizable.strings */; };
 		78A1F0F9262986540071958C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1F0F8262986540071958C /* Strings.swift */; };
+		A1CA7352641577C28A2CEBFD /* Pods_ArrimoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */; };
+		BB4A9D26FA54A0FA93F7D065 /* Pods_Arrimo_ArrimoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B6B855F879386714F2CB0A /* Pods_Arrimo_ArrimoUITests.framework */; };
+		F97DB409157E29B46DF898B4 /* Pods_Arrimo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F361ACC44D3D7E7705255C6D /* Pods_Arrimo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D8C899DA73E51DB2A9F5EB2 /* Pods-Arrimo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo.debug.xcconfig"; path = "Target Support Files/Pods-Arrimo/Pods-Arrimo.debug.xcconfig"; sourceTree = "<group>"; };
+		2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArrimoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AA43B3FBC993C9B9CD456E8 /* Pods-ArrimoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArrimoTests.release.xcconfig"; path = "Target Support Files/Pods-ArrimoTests/Pods-ArrimoTests.release.xcconfig"; sourceTree = "<group>"; };
+		4827BDA2BDBEBBDE96884378 /* Pods-Arrimo-ArrimoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo-ArrimoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		783017BB2628B8870030BA9F /* Arrimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arrimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783017BE2628B8870030BA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783017C02628B8870030BA9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +103,11 @@
 		78A1F0EF262986310071958C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F4262986420071958C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F8262986540071958C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		D1B6B855F879386714F2CB0A /* Pods_Arrimo_ArrimoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arrimo_ArrimoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4BB4CF1C0BADC9FF7DA582A /* Pods-Arrimo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo.release.xcconfig"; path = "Target Support Files/Pods-Arrimo/Pods-Arrimo.release.xcconfig"; sourceTree = "<group>"; };
+		E7FB145EC7EBA6E192E26213 /* Pods-ArrimoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArrimoTests.debug.xcconfig"; path = "Target Support Files/Pods-ArrimoTests/Pods-ArrimoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F361ACC44D3D7E7705255C6D /* Pods_Arrimo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arrimo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA7A619D65505AF37A14997 /* Pods-Arrimo-ArrimoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo-ArrimoUITests.release.xcconfig"; path = "Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97DB409157E29B46DF898B4 /* Pods_Arrimo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CA7352641577C28A2CEBFD /* Pods_ArrimoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,12 +131,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4A9D26FA54A0FA93F7D065 /* Pods_Arrimo_ArrimoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AC8CF9FD8D6E0EE7AD43A48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D8C899DA73E51DB2A9F5EB2 /* Pods-Arrimo.debug.xcconfig */,
+				E4BB4CF1C0BADC9FF7DA582A /* Pods-Arrimo.release.xcconfig */,
+				4827BDA2BDBEBBDE96884378 /* Pods-Arrimo-ArrimoUITests.debug.xcconfig */,
+				FEA7A619D65505AF37A14997 /* Pods-Arrimo-ArrimoUITests.release.xcconfig */,
+				E7FB145EC7EBA6E192E26213 /* Pods-ArrimoTests.debug.xcconfig */,
+				3AA43B3FBC993C9B9CD456E8 /* Pods-ArrimoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		783017B22628B8870030BA9F = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +159,8 @@
 				783017D42628B88D0030BA9F /* ArrimoTests */,
 				783017DF2628B88D0030BA9F /* ArrimoUITests */,
 				783017BC2628B8870030BA9F /* Products */,
+				4AC8CF9FD8D6E0EE7AD43A48 /* Pods */,
+				B334652A62766C8C619AC6CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,6 +325,16 @@
 			path = Objects;
 			sourceTree = "<group>";
 		};
+		B334652A62766C8C619AC6CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F361ACC44D3D7E7705255C6D /* Pods_Arrimo.framework */,
+				D1B6B855F879386714F2CB0A /* Pods_Arrimo_ArrimoUITests.framework */,
+				2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -301,9 +342,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 783017E52628B88E0030BA9F /* Build configuration list for PBXNativeTarget "Arrimo" */;
 			buildPhases = (
+				7D4DB44FFECC55AB716B9266 /* [CP] Check Pods Manifest.lock */,
 				783017B72628B8870030BA9F /* Sources */,
 				783017B82628B8870030BA9F /* Frameworks */,
 				783017B92628B8870030BA9F /* Resources */,
+				84E8DE7DA8497E1D8700C505 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +361,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 783017E82628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoTests" */;
 			buildPhases = (
+				5E666E80E645598A4C9D6FFC /* [CP] Check Pods Manifest.lock */,
 				783017CD2628B88D0030BA9F /* Sources */,
 				783017CE2628B88D0030BA9F /* Frameworks */,
 				783017CF2628B88D0030BA9F /* Resources */,
@@ -336,9 +380,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 783017EB2628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoUITests" */;
 			buildPhases = (
+				E15F5177EB8BB09813AFEAD4 /* [CP] Check Pods Manifest.lock */,
 				783017D82628B88D0030BA9F /* Sources */,
 				783017D92628B88D0030BA9F /* Frameworks */,
 				783017DA2628B88D0030BA9F /* Resources */,
+				F20F7649A6D7B2F55CF18998 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -435,6 +481,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E666E80E645598A4C9D6FFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArrimoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D4DB44FFECC55AB716B9266 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arrimo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84E8DE7DA8497E1D8700C505 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arrimo/Pods-Arrimo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arrimo/Pods-Arrimo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arrimo/Pods-Arrimo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E15F5177EB8BB09813AFEAD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arrimo-ArrimoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F20F7649A6D7B2F55CF18998 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		783017B72628B8870030BA9F /* Sources */ = {
@@ -626,6 +775,7 @@
 		};
 		783017E62628B88E0030BA9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D8C899DA73E51DB2A9F5EB2 /* Pods-Arrimo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -645,6 +795,7 @@
 		};
 		783017E72628B88E0030BA9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4BB4CF1C0BADC9FF7DA582A /* Pods-Arrimo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -664,6 +815,7 @@
 		};
 		783017E92628B88E0030BA9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7FB145EC7EBA6E192E26213 /* Pods-ArrimoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -686,6 +838,7 @@
 		};
 		783017EA2628B88E0030BA9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA43B3FBC993C9B9CD456E8 /* Pods-ArrimoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -708,6 +861,7 @@
 		};
 		783017EC2628B88E0030BA9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4827BDA2BDBEBBDE96884378 /* Pods-Arrimo-ArrimoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -728,6 +882,7 @@
 		};
 		783017ED2628B88E0030BA9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEA7A619D65505AF37A14997 /* Pods-Arrimo-ArrimoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

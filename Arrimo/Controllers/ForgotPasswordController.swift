@@ -72,9 +72,19 @@ class ForgotPasswordController: UIViewController, UITextFieldDelegate {
     // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
+        // start loading
+        showLoading()
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
-        print("reset password link")
-        simpleAlert(title: "Success".localized(), message: "A password reset link has been sent.".localized())
+        if emailTextField.text != "" {
+            hideLoading()
+            // throw sign in function
+                // haptics
+                // alerts
+        } else {
+            hideLoading()
+            addErrorNotification()
+            simpleAlert(title: "Error".localized(), message: "Please fill in the email text field.".localized())
+        }
     }
     
     // MARK: - UITextField Delegation
