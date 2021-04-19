@@ -7,3 +7,11 @@
 */
 
 "Welcome" = "Welcome";
+"Sign In" = "Sign In";
+"Email" = "Email";
+"Password" = "Password";
+"Forgot Password?" = "Forgot Password?";
+"Send Link" = "Send Link";
+"Success" = "Success";
+"A password reset link has been sent." = "A password reset link has been sent.";
+
