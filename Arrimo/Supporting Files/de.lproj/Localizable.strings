@@ -7,3 +7,10 @@
 */
 
 "Welcome" = "Willkommen";
+"Sign In" = "Anmelden";
+"Email" = "E-Mail";
+"Password" = "Passwort";
+"Forgot Password?" = "Passwort Vergessen?";
+"Send Link" = "Link Senden";
+"Success" = "Erfolg";
+"A password reset link has been sent." = "Ein Link zum Zurücksetzen des Passworts wurde gesendet.";

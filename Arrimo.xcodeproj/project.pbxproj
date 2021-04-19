@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017BE2628B8870030BA9F /* AppDelegate.swift */; };
 		783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C02628B8870030BA9F /* SceneDelegate.swift */; };
-		783017C32628B8870030BA9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C22628B8870030BA9F /* ViewController.swift */; };
+		783017C32628B8870030BA9F /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C22628B8870030BA9F /* SignInController.swift */; };
 		783017C82628B88D0030BA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783017C72628B88D0030BA9F /* Assets.xcassets */; };
 		783017CB2628B88D0030BA9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783017C92628B88D0030BA9F /* LaunchScreen.storyboard */; };
 		783017D62628B88D0030BA9F /* ArrimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017D52628B88D0030BA9F /* ArrimoTests.swift */; };
@@ -32,6 +32,10 @@
 		7830183426296C6E0030BA9F /* Kufam-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830181E26296C6D0030BA9F /* Kufam-SemiBold.ttf */; };
 		7830183526296C6E0030BA9F /* Kufam-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */; };
 		78301841262970420030BA9F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301840262970420030BA9F /* Fonts.swift */; };
+		78608636262DA201009AC4DC /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608635262DA201009AC4DC /* MainTextField.swift */; };
+		78608644262DA98D009AC4DC /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608643262DA98D009AC4DC /* MainButton.swift */; };
+		78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608648262DA9E1009AC4DC /* UIViewController.swift */; };
+		7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */; };
 		78A1F0EE262986310071958C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A1F0F0262986310071958C /* Localizable.strings */; };
 		78A1F0F9262986540071958C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1F0F8262986540071958C /* Strings.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +61,7 @@
 		783017BB2628B8870030BA9F /* Arrimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arrimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783017BE2628B8870030BA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783017C02628B8870030BA9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		783017C22628B8870030BA9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		783017C22628B8870030BA9F /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		783017C72628B88D0030BA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		783017CA2628B88D0030BA9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		783017CC2628B88D0030BA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +89,10 @@
 		7830181E26296C6D0030BA9F /* Kufam-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kufam-SemiBold.ttf"; sourceTree = "<group>"; };
 		7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kufam-BoldItalic.ttf"; sourceTree = "<group>"; };
 		78301840262970420030BA9F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		78608635262DA201009AC4DC /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
+		78608643262DA98D009AC4DC /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		78608648262DA9E1009AC4DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		78A1F0EF262986310071958C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F4262986420071958C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F8262986540071958C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -138,9 +146,9 @@
 		783017BD2628B8870030BA9F /* Arrimo */ = {
 			isa = PBXGroup;
 			children = (
-				783017F42628B9960030BA9F /* Controllers */,
-				783017F52628B9B00030BA9F /* Views */,
 				783017F62628B9BA0030BA9F /* Models */,
+				783017F52628B9B00030BA9F /* Views */,
+				783017F42628B9960030BA9F /* Controllers */,
 				783017F72628B9C10030BA9F /* Network Manager */,
 				783017FA2628B9DD0030BA9F /* Supporting Files */,
 				783017F82628B9CA0030BA9F /* Resources */,
@@ -170,7 +178,8 @@
 		783017F42628B9960030BA9F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				783017C22628B8870030BA9F /* ViewController.swift */,
+				783017C22628B8870030BA9F /* SignInController.swift */,
+				7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +208,7 @@
 		783017F82628B9CA0030BA9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78608634262DA1DF009AC4DC /* Objects */,
 				7830180626296C550030BA9F /* Fonts */,
 				7830183C262970230030BA9F /* Extensions */,
 				783017C72628B88D0030BA9F /* Assets.xcassets */,
@@ -270,8 +280,18 @@
 				783018012628BB610030BA9F /* Colors.swift */,
 				78301840262970420030BA9F /* Fonts.swift */,
 				78A1F0F8262986540071958C /* Strings.swift */,
+				78608648262DA9E1009AC4DC /* UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		78608634262DA1DF009AC4DC /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				78608635262DA201009AC4DC /* MainTextField.swift */,
+				78608643262DA98D009AC4DC /* MainButton.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,9 +441,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783017C32628B8870030BA9F /* ViewController.swift in Sources */,
+				78608636262DA201009AC4DC /* MainTextField.swift in Sources */,
+				783017C32628B8870030BA9F /* SignInController.swift in Sources */,
+				78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */,
 				78301841262970420030BA9F /* Fonts.swift in Sources */,
 				783018022628BB610030BA9F /* Colors.swift in Sources */,
+				7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */,
+				78608644262DA98D009AC4DC /* MainButton.swift in Sources */,
 				783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */,
 				78A1F0F9262986540071958C /* Strings.swift in Sources */,
 				783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */,
