@@ -14,7 +14,7 @@ class SignInController: UIViewController, UITextFieldDelegate {
     private let appIcon : UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "home-icon")!
-        imageView.contentMode = UIView.ContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -133,8 +133,15 @@ class SignInController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Private Functions
     
-    func autoLogin() {
+    private func autoLogin() {
         //
+        // success -> call completion method
+    }
+    
+    private func completion() {
+        let controller = WelcomeController()
+        controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.navigationController?.present(controller, animated: true, completion: nil)
     }
     
     // MARK: - Objective-C Functions
@@ -145,8 +152,9 @@ class SignInController: UIViewController, UITextFieldDelegate {
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         if emailTextField.text != "" && passwordTextField.text != "" {
             hideLoading()
-            addSuccessNotification()
-            simpleAlert(title: "Success".localized(), message: "A password reset link has been sent.".localized())
+            // throw email function
+                // success
+            completion()
         } else {
             hideLoading()
             addErrorNotification()
@@ -182,44 +190,3 @@ class SignInController: UIViewController, UITextFieldDelegate {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
