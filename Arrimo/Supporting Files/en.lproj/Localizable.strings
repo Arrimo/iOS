@@ -5,16 +5,43 @@
   Created by JJ Zapata on 4/16/21.
 */
 
+
 "Welcome" = "Welcome";
+
 "Sign In" = "Sign In";
+
 "Email" = "Email";
+
 "Password" = "Password";
+
 "Forgot Password?" = "Forgot Password?";
+
 "Send Link" = "Send Link";
+
 "Success" = "Success";
+
 "A password reset link has been sent." = "A password reset link has been sent.";
+
 "Error" = "Error";
+
 "Please fill in the email text field." = "Please fill in the email text field";
+
 "Please fill in all fields." = "Please fill in all fields.";
+
 "Hello" = "Hello";
+
 "Run My Day" = "Run My Day";
+
+"START COMMUTE" = "START COMMUTE";
+
+"Destination: " = "Destination: ";
+
+"'s House" = "s Haus";
+
+"START\nCOMMUTE" = "START\nCOMMUTE";
+
+"PAUSE" = "PAUSE";
+
+"OR" = "OR";
+
+"ARRIVED AT\nDESTINATION" = "ARRIVED AT\nDESTINATION";

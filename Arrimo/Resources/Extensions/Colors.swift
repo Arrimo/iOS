@@ -16,4 +16,6 @@ extension UIColor {
     
     static let hoverColor = UIColor(red: 7/255, green: 47/255, blue: 87/255, alpha: 1)
     
+    static let secondaryGray = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1)
+    
 }

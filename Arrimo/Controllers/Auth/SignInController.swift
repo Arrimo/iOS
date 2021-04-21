@@ -80,13 +80,14 @@ class SignInController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.shadowImage = nil
     }
     
     override func updateViewConstraints() {
@@ -140,8 +141,9 @@ class SignInController: UIViewController, UITextFieldDelegate {
     
     private func completion() {
         let controller = WelcomeController()
-        controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        self.navigationController?.present(controller, animated: true, completion: nil)
+        controller.modalPresentationStyle = .fullScreen
+        UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: controller)
+//        self.present(controller, animated: true, completion: nil)
     }
     
     // MARK: - Objective-C Functions

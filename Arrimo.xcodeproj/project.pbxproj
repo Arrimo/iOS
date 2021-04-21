@@ -37,6 +37,9 @@
 		78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608648262DA9E1009AC4DC /* UIViewController.swift */; };
 		7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */; };
 		7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860868C262F198B009AC4DC /* WelcomeController.swift */; };
+		786086A5263047C4009AC4DC /* StartCommuteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086A4263047C4009AC4DC /* StartCommuteController.swift */; };
+		786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086A926304853009AC4DC /* MainOrangeButton.swift */; };
+		786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086B126308F5D009AC4DC /* ArrivedController.swift */; };
 		78A1F0EE262986310071958C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A1F0F0262986310071958C /* Localizable.strings */; };
 		78A1F0F9262986540071958C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1F0F8262986540071958C /* Strings.swift */; };
 		A1CA7352641577C28A2CEBFD /* Pods_ArrimoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */; };
@@ -103,6 +106,9 @@
 		7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		78608666262E0A5B009AC4DC /* Arrimo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arrimo.entitlements; sourceTree = "<group>"; };
 		7860868C262F198B009AC4DC /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		786086A4263047C4009AC4DC /* StartCommuteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCommuteController.swift; sourceTree = "<group>"; };
+		786086A926304853009AC4DC /* MainOrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrangeButton.swift; sourceTree = "<group>"; };
+		786086B126308F5D009AC4DC /* ArrivedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedController.swift; sourceTree = "<group>"; };
 		78A1F0EF262986310071958C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F4262986420071958C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F8262986540071958C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -212,9 +218,10 @@
 		783017F42628B9960030BA9F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				783017C22628B8870030BA9F /* SignInController.swift */,
-				7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */,
+				786086A326304759009AC4DC /* Auth */,
 				7860868C262F198B009AC4DC /* WelcomeController.swift */,
+				786086A4263047C4009AC4DC /* StartCommuteController.swift */,
+				786086B126308F5D009AC4DC /* ArrivedController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,8 +332,18 @@
 			children = (
 				78608635262DA201009AC4DC /* MainTextField.swift */,
 				78608643262DA98D009AC4DC /* MainButton.swift */,
+				786086A926304853009AC4DC /* MainOrangeButton.swift */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		786086A326304759009AC4DC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				783017C22628B8870030BA9F /* SignInController.swift */,
+				7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		B334652A62766C8C619AC6CE /* Frameworks */ = {
@@ -599,12 +616,15 @@
 				78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */,
 				78301841262970420030BA9F /* Fonts.swift in Sources */,
 				783018022628BB610030BA9F /* Colors.swift in Sources */,
+				786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */,
 				7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */,
+				786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */,
 				7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */,
 				78608644262DA98D009AC4DC /* MainButton.swift in Sources */,
 				783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */,
 				78A1F0F9262986540071958C /* Strings.swift in Sources */,
 				783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */,
+				786086A5263047C4009AC4DC /* StartCommuteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
