@@ -52,4 +52,20 @@ extension UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    // MARK: - Logistics
+    
+    func sendJSON(action: String, long: Double, lat: Double) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.mm.yyyy HH:MM:SS"
+        let dict : [String : Any] = [
+            "id" : "CareTakerID",
+            "clientId" : "CLIENT ID",
+            "time" : formatter.string(from: Date()),
+            "action" : action,
+            "long" : long,
+            "lat" : lat
+        ]
+        print(dict)
+    }
+    
 }
