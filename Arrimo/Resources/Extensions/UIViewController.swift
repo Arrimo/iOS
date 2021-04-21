@@ -46,4 +46,10 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Segues
+    
+    func passNavigationTo(nextViewController viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }

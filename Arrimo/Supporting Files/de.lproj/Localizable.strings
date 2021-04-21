@@ -5,16 +5,43 @@
   Created by JJ Zapata on 4/16/21.
 */
 
+
 "Welcome" = "Willkommen";
+
 "Sign In" = "Anmelden";
+
 "Email" = "E-Mail";
+
 "Password" = "Passwort";
+
 "Forgot Password?" = "Passwort Vergessen?";
+
 "Send Link" = "Link Senden";
+
 "Success" = "Erfolg";
+
 "A password reset link has been sent." = "Ein Link zum Zurücksetzen des Passworts wurde gesendet.";
+
 "Error" = "Fehler";
+
 "Please fill in the email text field." = "Bitte füllen Sie das E-Mail-Textfeld aus";
+
 "Please fill in all fields." = "Bitte füllen Sie alle Felder aus.";
+
 "Hello" = "Hallo";
+
 "Run My Day" = "Arbeitstag Starten";
+
+"START COMMUTE" = "TOUR BEGINNEN";
+
+"Destination: " = "Ziel: ";
+
+"'s House" = "s Haus";
+
+"START\nCOMMUTE" = "TOUR\nBEGINNEN";
+
+"PAUSE" = "PAUSE";
+
+"OR" = "ODER";
+
+"ARRIVED AT\nDESTINATION" = "ZIELORT\nERREICHT";

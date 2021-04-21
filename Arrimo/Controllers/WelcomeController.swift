@@ -57,13 +57,13 @@ class WelcomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = UIColor.darkBlue
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
-        navigationController?.navigationBar.isHidden = false
     }
     
     override func updateViewConstraints() {
@@ -105,6 +105,13 @@ class WelcomeController: UIViewController {
         }
     }
     
+    private func fetchRoute() {
+        let controller = StartCommuteController()
+        controller.user = "Johnathon"
+        controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
@@ -112,13 +119,7 @@ class WelcomeController: UIViewController {
         showLoading()
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         hideLoading()
-    }
-    
-    @objc func forgotPasswordPressed() {
-        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
-        let controller = ForgotPasswordController()
-        controller.modalPresentationStyle = .popover
-        navigationController?.present(controller, animated: true, completion: nil)
+        fetchRoute()
     }
 
 }
