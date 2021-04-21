@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WelcomeController: UIViewController {
+class WelcomeController: UIViewController, CLLocationManagerDelegate {
+    
+    // MARK: - Variables
+    
+    var locationManager : CLLocationManager!
     
     // MARK: - View Objects
     
@@ -47,6 +52,7 @@ class WelcomeController: UIViewController {
         super.viewDidLoad()
         
         backend()
+        locationServices()
         updateViewConstraints()
         
         view.backgroundColor = .white
@@ -96,6 +102,16 @@ class WelcomeController: UIViewController {
     
     // MARK: - Private Functions
     
+    private func locationServices() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        if !CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
     private func backend() {
         let name = "nil"
         if name == "nil" {
@@ -112,6 +128,15 @@ class WelcomeController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    private func sendDictionary() {
+        if locationManager.location?.coordinate == nil {
+            locationManager.requestWhenInUseAuthorization()
+        } else {
+            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            fetchRoute()
+        }
+    }
+    
     // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
@@ -119,7 +144,7 @@ class WelcomeController: UIViewController {
         showLoading()
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         hideLoading()
-        fetchRoute()
+        sendDictionary()
     }
 
 }

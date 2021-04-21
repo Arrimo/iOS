@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class StartCommuteController: UIViewController {
+class StartCommuteController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Variables
+    
+    var locationManager : CLLocationManager!
     
     var user : String? {
         didSet {
@@ -57,6 +60,7 @@ class StartCommuteController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationServices()
         updateViewConstraints()
         
         view.backgroundColor = .white
@@ -103,24 +107,51 @@ class StartCommuteController: UIViewController {
     
     // MARK: - Private Functions
     
+    private func locationServices() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        if !CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
     private func backend(withId id: String) {
         //
         // set nav bar
     }
     
-    // MARK: - Objective-C Functions
+    private func sendDictionary() {
+        if locationManager.location?.coordinate == nil {
+            locationManager.requestWhenInUseAuthorization()
+        } else {
+            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            let controller = ArrivedController()
+            controller.user = self.user
+            passNavigationTo(nextViewController: controller)
+        }
+    }
     
     @objc func pauseButtonPressed() {
-        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
-        print("paused")
+        print("are you sure you want to pause")
+//        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
+//        print("paused")
+//        if locationManager.location?.coordinate == nil {
+//            locationManager.requestWhenInUseAuthorization()
+//        } else {
+//            sendJSON(action: "pause", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+//            // after pause pressed
+//        }
     }
+    
+    // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
         // other information parameter upload here
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
-        let controller = ArrivedController()
-        controller.user = self.user
-        passNavigationTo(nextViewController: controller)
+        print("started commute")
+        sendDictionary()
     }
 
 }
