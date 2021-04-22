@@ -134,15 +134,27 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func pauseButtonPressed() {
+        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
         print("are you sure you want to pause")
-//        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
-//        print("paused")
-//        if locationManager.location?.coordinate == nil {
-//            locationManager.requestWhenInUseAuthorization()
-//        } else {
-//            sendJSON(action: "pause", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
-//            // after pause pressed
-//        }
+        let alert = UIAlertController(title: "Why are you pausing?".localized(), message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Lunch".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
+            if self.locationManager.location?.coordinate == nil {
+                self.locationManager.requestWhenInUseAuthorization()
+            } else {
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                // after pause pressed
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Break / Personal".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
+            if self.locationManager.location?.coordinate == nil {
+                self.locationManager.requestWhenInUseAuthorization()
+            } else {
+                self.sendJSON(action: "pause", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                // after pause pressed
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Objective-C Functions
