@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ArrivedController: UIViewController {
+class ArrivedController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Variables
+    
+    var locationManager : CLLocationManager!
     
     var user : String? {
         didSet {
@@ -57,6 +60,7 @@ class ArrivedController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationServices()
         updateViewConstraints()
         
         view.backgroundColor = .white
@@ -103,21 +107,65 @@ class ArrivedController: UIViewController {
     
     // MARK: - Private Functions
     
-    private func backend(withId id: String) {
-        //
-        // set nav bar
+    private func locationServices() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        if !CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    private func sendDictionary() {
+        if locationManager.location?.coordinate == nil {
+            locationManager.requestWhenInUseAuthorization()
+        } else {
+            sendJSON(action: "arrivedDestination", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            let controller = WorkingController()
+            passNavigationTo(nextViewController: controller)
+        }
     }
     
     // MARK: - Objective-C Functions
     
     @objc func pauseButtonPressed() {
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
-        print("paused")
+        print("are you sure you want to pause")
+        let alert = UIAlertController(title: "Why are you pausing?".localized(), message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Lunch".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
+            if self.locationManager.location?.coordinate == nil {
+                self.locationManager.requestWhenInUseAuthorization()
+            } else {
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Break / Personal".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
+            if self.locationManager.location?.coordinate == nil {
+                self.locationManager.requestWhenInUseAuthorization()
+            } else {
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendToPauseScreen(withAction: "PAUSE".localized())
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func mainButtonPressed() {
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
-        print("finish commute")
+        let destination = CLLocation(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
+        let current = CLLocation(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
+        let distance = current.distance(from: destination) // meters
+        let maxRadius = 200 // meters
+        print(Int(distance))
+        if Int(distance) > maxRadius {
+            print("far away")
+            self.simpleAlert(title: "Error".localized(), message: "You are too far away from the destination to continue.".localized())
+        } else {
+            self.sendDictionary()
+        }
     }
 
 }
