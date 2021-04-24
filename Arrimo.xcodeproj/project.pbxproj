@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78174C8B2633FF35004088C2 /* PauseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78174C8A2633FF35004088C2 /* PauseController.swift */; };
 		783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017BE2628B8870030BA9F /* AppDelegate.swift */; };
 		783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C02628B8870030BA9F /* SceneDelegate.swift */; };
 		783017C32628B8870030BA9F /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C22628B8870030BA9F /* SignInController.swift */; };
@@ -32,6 +33,7 @@
 		7830183426296C6E0030BA9F /* Kufam-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830181E26296C6D0030BA9F /* Kufam-SemiBold.ttf */; };
 		7830183526296C6E0030BA9F /* Kufam-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */; };
 		78301841262970420030BA9F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301840262970420030BA9F /* Fonts.swift */; };
+		783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A6EE926341C5D00B52900 /* WorkingController.swift */; };
 		78608636262DA201009AC4DC /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608635262DA201009AC4DC /* MainTextField.swift */; };
 		78608644262DA98D009AC4DC /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608643262DA98D009AC4DC /* MainButton.swift */; };
 		78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608648262DA9E1009AC4DC /* UIViewController.swift */; };
@@ -69,6 +71,7 @@
 		2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArrimoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA43B3FBC993C9B9CD456E8 /* Pods-ArrimoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArrimoTests.release.xcconfig"; path = "Target Support Files/Pods-ArrimoTests/Pods-ArrimoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4827BDA2BDBEBBDE96884378 /* Pods-Arrimo-ArrimoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo-ArrimoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		78174C8A2633FF35004088C2 /* PauseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseController.swift; sourceTree = "<group>"; };
 		783017BB2628B8870030BA9F /* Arrimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arrimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783017BE2628B8870030BA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783017C02628B8870030BA9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		7830181E26296C6D0030BA9F /* Kufam-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kufam-SemiBold.ttf"; sourceTree = "<group>"; };
 		7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kufam-BoldItalic.ttf"; sourceTree = "<group>"; };
 		78301840262970420030BA9F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		783A6EE926341C5D00B52900 /* WorkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingController.swift; sourceTree = "<group>"; };
 		78608635262DA201009AC4DC /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		78608643262DA98D009AC4DC /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		78608648262DA9E1009AC4DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				7860868C262F198B009AC4DC /* WelcomeController.swift */,
 				786086A4263047C4009AC4DC /* StartCommuteController.swift */,
 				786086B126308F5D009AC4DC /* ArrivedController.swift */,
+				78174C8A2633FF35004088C2 /* PauseController.swift */,
+				783A6EE926341C5D00B52900 /* WorkingController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -611,12 +617,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78174C8B2633FF35004088C2 /* PauseController.swift in Sources */,
 				78608636262DA201009AC4DC /* MainTextField.swift in Sources */,
 				783017C32628B8870030BA9F /* SignInController.swift in Sources */,
 				78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */,
 				78301841262970420030BA9F /* Fonts.swift in Sources */,
 				783018022628BB610030BA9F /* Colors.swift in Sources */,
 				786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */,
+				783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */,
 				7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */,
 				786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */,
 				7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */,

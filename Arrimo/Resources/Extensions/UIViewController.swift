@@ -52,6 +52,13 @@ extension UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    func sendToPauseScreen(withAction action: String) {
+        let controller = PauseController()
+        controller.action = action
+        controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(controller, animated: true, completion: nil)
+    }
+    
     // MARK: - Logistics
     
     func sendJSON(action: String, long: Double, lat: Double) {

@@ -117,11 +117,6 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    private func backend(withId id: String) {
-        //
-        // set nav bar
-    }
-    
     private func sendDictionary() {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
@@ -133,6 +128,15 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // MARK: - Objective-C Functions
+    
+    @objc func mainButtonPressed() {
+        // other information parameter upload here
+        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
+        print("started commute")
+        sendDictionary()
+    }
+    
     @objc func pauseButtonPressed() {
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
         print("are you sure you want to pause")
@@ -142,28 +146,19 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
                 self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
-                // after pause pressed
+                self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
         alert.addAction(UIAlertAction(title: "Break / Personal".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "pause", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
-                // after pause pressed
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel".localized(), style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    // MARK: - Objective-C Functions
-    
-    @objc func mainButtonPressed() {
-        // other information parameter upload here
-        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
-        print("started commute")
-        sendDictionary()
     }
 
 }
