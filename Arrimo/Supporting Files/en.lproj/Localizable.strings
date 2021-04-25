@@ -63,3 +63,5 @@
 "RESUME" = "RESUME";
 
 "You are too far away from the destination to continue." = "You are too far away from the destination to continue.";
+
+"Please enter a correctly formatted email" = "Please enter a correctly formatted email";
