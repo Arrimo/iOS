@@ -137,26 +137,31 @@ class SignInController: UIViewController, UITextFieldDelegate {
     private func autoLogin() {
         //
         // success -> call completion method
+        // completion()
     }
     
     private func completion() {
         let controller = WelcomeController()
         controller.modalPresentationStyle = .fullScreen
         UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: controller)
-//        self.present(controller, animated: true, completion: nil)
     }
     
     // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
         // start loading
-        showLoading()
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
+        showLoading()
         if emailTextField.text != "" && passwordTextField.text != "" {
-            hideLoading()
-            // throw email function
-                // success
-            completion()
+            if isValidEmail(emailTextField.text!) {
+                hideLoading()
+                // throw email function
+                    // success
+                completion()
+            } else {
+                hideLoading()
+                simpleAlert(title: "Error".localized(), message: "Please enter a correctly formatted email".localized())
+            }
         } else {
             hideLoading()
             addErrorNotification()

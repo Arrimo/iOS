@@ -121,7 +121,7 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
         } else {
-            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            sendJSON(action: "commuteStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
             let controller = ArrivedController()
             controller.user = self.user
             passNavigationTo(nextViewController: controller)
