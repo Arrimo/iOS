@@ -37,10 +37,6 @@ class WorkingController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.darkBlue
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
