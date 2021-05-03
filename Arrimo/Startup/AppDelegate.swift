@@ -32,8 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    
-    
     private func setNavigationBarDefaults() {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.tekturBold(size: 17)!, NSAttributedString.Key.foregroundColor : UIColor.black]
     }
