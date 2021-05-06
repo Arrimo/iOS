@@ -29,7 +29,7 @@ class SignInController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
-    private let emailTextField : MainTextField = {
+    let emailTextField : MainTextField = {
         let textField = MainTextField(placeholderString: "Email".localized())
         textField.keyboardType = UIKeyboardType.emailAddress
         textField.autocapitalizationType = UITextAutocapitalizationType.none
@@ -37,7 +37,7 @@ class SignInController: UIViewController, UITextFieldDelegate {
         return textField
     }()
     
-    private let passwordTextField : MainTextField = {
+    let passwordTextField : MainTextField = {
         let textField = MainTextField(placeholderString: "Password".localized())
         textField.keyboardType = UIKeyboardType.default
         textField.autocapitalizationType = UITextAutocapitalizationType.none
@@ -160,6 +160,7 @@ class SignInController: UIViewController, UITextFieldDelegate {
                 completion()
             } else {
                 hideLoading()
+                addErrorNotification()
                 simpleAlert(title: "Error".localized(), message: "Please enter a correctly formatted email".localized())
             }
         } else {

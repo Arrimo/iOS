@@ -42,6 +42,8 @@
 		786086A5263047C4009AC4DC /* StartCommuteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086A4263047C4009AC4DC /* StartCommuteController.swift */; };
 		786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086A926304853009AC4DC /* MainOrangeButton.swift */; };
 		786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086B126308F5D009AC4DC /* ArrivedController.swift */; };
+		788FAA41264435E60018DDB8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FAA40264435E60018DDB8 /* Task.swift */; };
+		788FAA442644379F0018DDB8 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FAA432644379F0018DDB8 /* TaskCell.swift */; };
 		78A1F0EE262986310071958C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A1F0F0262986310071958C /* Localizable.strings */; };
 		78A1F0F9262986540071958C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1F0F8262986540071958C /* Strings.swift */; };
 		A1CA7352641577C28A2CEBFD /* Pods_ArrimoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */; };
@@ -113,6 +115,8 @@
 		786086A4263047C4009AC4DC /* StartCommuteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCommuteController.swift; sourceTree = "<group>"; };
 		786086A926304853009AC4DC /* MainOrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrangeButton.swift; sourceTree = "<group>"; };
 		786086B126308F5D009AC4DC /* ArrivedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedController.swift; sourceTree = "<group>"; };
+		788FAA40264435E60018DDB8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		788FAA432644379F0018DDB8 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		78A1F0EF262986310071958C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F4262986420071958C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F8262986540071958C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 		783017F52628B9B00030BA9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				788FAA42264437800018DDB8 /* WorkingController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 		783017F62628B9BA0030BA9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				788FAA40264435E60018DDB8 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +356,14 @@
 				7860864D262DAD2C009AC4DC /* ForgotPasswordController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		788FAA42264437800018DDB8 /* WorkingController */ = {
+			isa = PBXGroup;
+			children = (
+				788FAA432644379F0018DDB8 /* TaskCell.swift */,
+			);
+			path = WorkingController;
 			sourceTree = "<group>";
 		};
 		B334652A62766C8C619AC6CE /* Frameworks */ = {
@@ -632,6 +646,8 @@
 				783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */,
 				78A1F0F9262986540071958C /* Strings.swift in Sources */,
 				783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */,
+				788FAA41264435E60018DDB8 /* Task.swift in Sources */,
+				788FAA442644379F0018DDB8 /* TaskCell.swift in Sources */,
 				786086A5263047C4009AC4DC /* StartCommuteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import Arrimo
 
 class ArrimoUITests: XCTestCase {
 
