@@ -23,7 +23,7 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - View Objects
     
-    private let startCommute : MainOrangeButton = {
+    let startCommute : MainOrangeButton = {
         let button = MainOrangeButton(title: "START\nCOMMUTE".localized())
         button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         button.titleLabel?.textAlignment = NSTextAlignment.center

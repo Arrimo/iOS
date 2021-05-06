@@ -120,6 +120,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
     private func sendDictionary() {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
+            addErrorNotification()
         } else {
             sendJSON(action: "arrivedDestination", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
             let controller = WorkingController()
@@ -136,6 +137,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
         alert.addAction(UIAlertAction(title: "Lunch".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
+                self.addErrorNotification()
             } else {
                 self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
@@ -144,6 +146,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
         alert.addAction(UIAlertAction(title: "Break / Personal".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
+                self.addErrorNotification()
             } else {
                 self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())

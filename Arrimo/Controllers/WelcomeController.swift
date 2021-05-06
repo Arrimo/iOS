@@ -40,7 +40,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         return view
     }()
 
-    private let mainButton : MainButton = {
+    let mainButton : MainButton = {
         let button = MainButton(title: "Run My Day".localized())
         button.addTarget(self, action: #selector(mainButtonPressed), for: UIControl.Event.touchUpInside)
         return button

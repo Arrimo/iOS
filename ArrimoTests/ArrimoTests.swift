@@ -8,26 +8,58 @@
 import XCTest
 @testable import Arrimo
 
-class ArrimoTests: XCTestCase {
-
+class ArrimoAuthTests: XCTestCase {
+    
+    var signInController : SignInController!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        signInController = SignInController()
+        signInController.loadViewIfNeeded()
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        signInController = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testEmailTextField_ContentType() throws {
+        let emailTextField = try XCTUnwrap(signInController.emailTextField, "Password Text Field Keyboard Style Incorrect")
+        XCTAssertEqual(emailTextField.keyboardType, .emailAddress)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testPasswordTextField_ContentType() throws {
+        let passwordTextField = try XCTUnwrap(signInController.passwordTextField, "Password Text Field Is Not Secured Text")
+        XCTAssertEqual(passwordTextField.isSecureTextEntry, true)
     }
+    
+}
 
+class ArrimoRunMyDayTests: XCTestCase {
+    
+    var welcomeController : WelcomeController!
+    
+    var startCommute : StartCommuteController!
+    
+    override func setUpWithError() throws {
+        startCommute = StartCommuteController()
+        startCommute.loadViewIfNeeded()
+        
+        welcomeController = WelcomeController()
+        welcomeController.loadViewIfNeeded()
+    }
+    
+    override func tearDownWithError() throws {
+        startCommute = nil
+        welcomeController = nil
+    }
+    
+    func testMainButtonTitleLocalization() throws {
+        let startCommuteButton = try XCTUnwrap(startCommute.startCommute, "Start Commute Button Not Localized")
+        XCTAssertEqual(startCommuteButton.titleLabel?.text, "START\nCOMMUTE".localized())
+    }
+    
+    func testJSONFormat() throws {
+        let welcomeButton = try XCTUnwrap(welcomeController.mainButton, "No Main Button In Welcome Screen")
+//        welcomeButton.
+    }
+    
 }
