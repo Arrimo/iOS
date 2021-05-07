@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
-        window?.rootViewController = UINavigationController(rootViewController: SignInController())
+//        window?.rootViewController = UINavigationController(rootViewController: SignInController())
+        window?.rootViewController = UINavigationController(rootViewController: WorkingController())
         window?.makeKeyAndVisible()
     }
 

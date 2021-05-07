@@ -8,5 +8,11 @@
 import UIKit
 
 class Task: NSObject {
+    
+    var id : String?
+    
+    var title : String?
+    
+    var duration : Int?
 
 }
