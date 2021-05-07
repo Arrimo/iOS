@@ -42,6 +42,7 @@
 		786086A5263047C4009AC4DC /* StartCommuteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086A4263047C4009AC4DC /* StartCommuteController.swift */; };
 		786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086A926304853009AC4DC /* MainOrangeButton.swift */; };
 		786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786086B126308F5D009AC4DC /* ArrivedController.swift */; };
+		7868124C26458D6A00A62134 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868124B26458D6A00A62134 /* CheckBox.swift */; };
 		788FAA41264435E60018DDB8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FAA40264435E60018DDB8 /* Task.swift */; };
 		788FAA442644379F0018DDB8 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FAA432644379F0018DDB8 /* TaskCell.swift */; };
 		78A1F0EE262986310071958C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A1F0F0262986310071958C /* Localizable.strings */; };
@@ -115,6 +116,7 @@
 		786086A4263047C4009AC4DC /* StartCommuteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCommuteController.swift; sourceTree = "<group>"; };
 		786086A926304853009AC4DC /* MainOrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOrangeButton.swift; sourceTree = "<group>"; };
 		786086B126308F5D009AC4DC /* ArrivedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedController.swift; sourceTree = "<group>"; };
+		7868124B26458D6A00A62134 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		788FAA40264435E60018DDB8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		788FAA432644379F0018DDB8 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		78A1F0EF262986310071958C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				788FAA42264437800018DDB8 /* WorkingController */,
+				7868124B26458D6A00A62134 /* CheckBox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				78301841262970420030BA9F /* Fonts.swift in Sources */,
 				783018022628BB610030BA9F /* Colors.swift in Sources */,
 				786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */,
+				7868124C26458D6A00A62134 /* CheckBox.swift in Sources */,
 				783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */,
 				7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */,
 				786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */,

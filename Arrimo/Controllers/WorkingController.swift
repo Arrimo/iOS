@@ -70,7 +70,9 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     
     private let taskTableView : UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = UIColor.red
+        tableView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TaskCell.self, forCellReuseIdentifier: TaskCell.identifier)
         return tableView
@@ -195,7 +197,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
         taskView.addSubview(taskTableView)
         taskTableView.delegate = self
         taskTableView.dataSource = self
-        taskTableView.topAnchor.constraint(equalTo: taskDivider.bottomAnchor, constant: 14).isActive = true
+        taskTableView.topAnchor.constraint(equalTo: taskDivider.bottomAnchor, constant: 4.5).isActive = true
         taskTableView.leftAnchor.constraint(equalTo: taskView.leftAnchor).isActive = true
         taskTableView.rightAnchor.constraint(equalTo: taskView.rightAnchor).isActive = true
         taskTableView.bottomAnchor.constraint(equalTo: taskView.bottomAnchor, constant: -14).isActive = true
@@ -218,10 +220,25 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     }
     
     private func stubBackend() {
-        tasks.append(Task())
-        tasks.append(Task())
-        tasks.append(Task())
-        tasks.append(Task())
+        let task1 = Task()
+        task1.title = "Sweep Floors"
+        task1.duration = 15
+        tasks.append(task1)
+        
+        let task2 = Task()
+        task2.title = "Cook Dinner"
+        task2.duration = 25
+        tasks.append(task2)
+        
+        let task3 = Task()
+        task3.title = "Read Book"
+        task3.duration = 10
+        tasks.append(task3)
+        
+        let task4 = Task()
+        task4.title = "Buy Groceries"
+        task4.duration = 15
+        tasks.append(task4)
     }
     
     // MARK: - Objective-C Functions
@@ -261,12 +278,9 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     }
     
     @objc func updateTimeLabel() {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(Calendar.Component.hour, from: date)
-        let minute = calendar.component(Calendar.Component.minute, from: date)
-        let timeString = "\(hour):\(minute)"
-        timeLabel.text = timeString
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        timeLabel.text = formatter.string(from: Date())
     }
     
     // MARK: - UITableView Delegation
@@ -280,7 +294,9 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskCell.identifier, for: indexPath) as! TaskCell
+        cell.task = tasks[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

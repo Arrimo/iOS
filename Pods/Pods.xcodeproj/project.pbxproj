@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,12 +52,12 @@
 /* Begin PBXFileReference section */
 		001C468E3FC214B8A61531C4CC84D836 /* Pods-Arrimo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Arrimo-umbrella.h"; sourceTree = "<group>"; };
 		06F94119A71CA716FD5E889F4A495EB7 /* Pods-ArrimoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ArrimoTests.modulemap"; sourceTree = "<group>"; };
-		0A4D08A7EBDCE6FBB1A3F4884476677D /* Pods_ArrimoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArrimoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4D08A7EBDCE6FBB1A3F4884476677D /* Pods_ArrimoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ArrimoTests.framework; path = "Pods-ArrimoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F52E85944DA373EAF1B845B90110280 /* Pods-Arrimo-ArrimoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Arrimo-ArrimoUITests-umbrella.h"; sourceTree = "<group>"; };
 		0FC89D1E9E141D1D2CAD906539619561 /* Pods-ArrimoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ArrimoTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1011DCAB078B0D3883F7080A7E7971C9 /* Pods-Arrimo-ArrimoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Arrimo-ArrimoUITests-dummy.m"; sourceTree = "<group>"; };
 		1ADC0F850F980D65C57EF8FE07CC7A42 /* Pods-Arrimo-ArrimoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Arrimo-ArrimoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		250246FFB4981A03CDDD7665953E5FFE /* Pods_Arrimo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arrimo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		250246FFB4981A03CDDD7665953E5FFE /* Pods_Arrimo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Arrimo.framework; path = "Pods-Arrimo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3A2F96B7B4639C56B82F473EFBA0B8 /* Pods-ArrimoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ArrimoTests.release.xcconfig"; sourceTree = "<group>"; };
 		3EFFB279E37A5DD9833654C8AEC7EB57 /* Pods-ArrimoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ArrimoTests-dummy.m"; sourceTree = "<group>"; };
 		4AB4EB484777191EA001935C55E33B3F /* Pods-Arrimo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Arrimo.modulemap"; sourceTree = "<group>"; };
@@ -71,13 +71,13 @@
 		5F31C808188F0318B8D5A16F065156F9 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		67C8787AEF5F8F4CCDD782A64D078427 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		6CEB62E30C5BAB8D4A2A435A4D4DA33A /* MBProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.release.xcconfig; sourceTree = "<group>"; };
-		6ECC9F2287A1620068BB31DBF4B804B2 /* Pods_Arrimo_ArrimoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arrimo_ArrimoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ECC9F2287A1620068BB31DBF4B804B2 /* Pods_Arrimo_ArrimoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Arrimo_ArrimoUITests.framework; path = "Pods-Arrimo-ArrimoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F3D5C406E0C52759364BC9766D0F61E /* Pods-Arrimo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Arrimo-Info.plist"; sourceTree = "<group>"; };
 		71586C258C9A4BA21A453C698866EBC7 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		7A4F68EC68C72F39421953563FE4060B /* Pods-Arrimo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Arrimo-frameworks.sh"; sourceTree = "<group>"; };
-		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910D7B76EC5B183A1DD4EBEF09BA272F /* Pods-Arrimo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Arrimo.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A725580ACF565ED928110667AA664433 /* Pods-Arrimo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Arrimo.release.xcconfig"; sourceTree = "<group>"; };
 		B35EEA7BF2A5F412415CCB3C79C2B6DC /* Pods-Arrimo-ArrimoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Arrimo-ArrimoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C03CCD5D6266FFED9724354A347174B6 /* Pods-ArrimoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ArrimoTests-umbrella.h"; sourceTree = "<group>"; };
@@ -176,6 +176,7 @@
 				67C8787AEF5F8F4CCDD782A64D078427 /* MBProgressHUD.m */,
 				C86A493F744575B77BC85AB9B143DAC2 /* Support Files */,
 			);
+			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -387,10 +388,10 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -755,7 +756,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -902,7 +903,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
