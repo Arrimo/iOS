@@ -34,6 +34,11 @@
 		7830183526296C6E0030BA9F /* Kufam-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */; };
 		78301841262970420030BA9F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301840262970420030BA9F /* Fonts.swift */; };
 		783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A6EE926341C5D00B52900 /* WorkingController.swift */; };
+		7854FC5E26493E5F00693FE3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC5D26493E5F00693FE3 /* API.swift */; };
+		7854FC6026493F7500693FE3 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC5F26493F7500693FE3 /* Patient.swift */; };
+		7854FC6226493F8E00693FE3 /* Caretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC6126493F8D00693FE3 /* Caretaker.swift */; };
+		7854FC642649508600693FE3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC632649508600693FE3 /* Event.swift */; };
+		7854FC66264957F300693FE3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC65264957F300693FE3 /* Location.swift */; };
 		78608636262DA201009AC4DC /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608635262DA201009AC4DC /* MainTextField.swift */; };
 		78608644262DA98D009AC4DC /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608643262DA98D009AC4DC /* MainButton.swift */; };
 		78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608648262DA9E1009AC4DC /* UIViewController.swift */; };
@@ -107,6 +112,11 @@
 		7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kufam-BoldItalic.ttf"; sourceTree = "<group>"; };
 		78301840262970420030BA9F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		783A6EE926341C5D00B52900 /* WorkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingController.swift; sourceTree = "<group>"; };
+		7854FC5D26493E5F00693FE3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7854FC5F26493F7500693FE3 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		7854FC6126493F8D00693FE3 /* Caretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretaker.swift; sourceTree = "<group>"; };
+		7854FC632649508600693FE3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		7854FC65264957F300693FE3 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		78608635262DA201009AC4DC /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		78608643262DA98D009AC4DC /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		78608648262DA9E1009AC4DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				788FAA40264435E60018DDB8 /* Task.swift */,
+				7854FC5F26493F7500693FE3 /* Patient.swift */,
+				7854FC6126493F8D00693FE3 /* Caretaker.swift */,
+				7854FC632649508600693FE3 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,6 +271,7 @@
 		783017F72628B9C10030BA9F /* Network Manager */ = {
 			isa = PBXGroup;
 			children = (
+				7854FC5D26493E5F00693FE3 /* API.swift */,
 			);
 			path = "Network Manager";
 			sourceTree = "<group>";
@@ -338,6 +352,7 @@
 				78301840262970420030BA9F /* Fonts.swift */,
 				78A1F0F8262986540071958C /* Strings.swift */,
 				78608648262DA9E1009AC4DC /* UIViewController.swift */,
+				7854FC65264957F300693FE3 /* Location.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -642,12 +657,17 @@
 				783018022628BB610030BA9F /* Colors.swift in Sources */,
 				786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */,
 				7868124C26458D6A00A62134 /* CheckBox.swift in Sources */,
+				7854FC642649508600693FE3 /* Event.swift in Sources */,
 				783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */,
+				7854FC66264957F300693FE3 /* Location.swift in Sources */,
 				7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */,
 				786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */,
+				7854FC6026493F7500693FE3 /* Patient.swift in Sources */,
 				7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */,
 				78608644262DA98D009AC4DC /* MainButton.swift in Sources */,
+				7854FC6226493F8E00693FE3 /* Caretaker.swift in Sources */,
 				783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */,
+				7854FC5E26493E5F00693FE3 /* API.swift in Sources */,
 				78A1F0F9262986540071958C /* Strings.swift in Sources */,
 				783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */,
 				788FAA41264435E60018DDB8 /* Task.swift in Sources */,

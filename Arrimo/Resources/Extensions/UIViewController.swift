@@ -5,6 +5,7 @@
 //  Created by JJ Zapata on 4/19/21.
 //
 
+import CoreLocation
 import MBProgressHUD
 import Foundation
 import UIKit
@@ -61,18 +62,27 @@ extension UIViewController {
     
     // MARK: - Logistics
     
-    func sendJSON(action: String, long: Double, lat: Double) {
+    func sendJSON(action: String, long: Double, lat: Double, user: Patient?, caretaker: Caretaker?, tasks: [Task]?) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.mm.yyyy HH:MM:SS"
-        let dict : [String : Any] = [
+        let params : [String : Any] = [
             "id" : "CareTakerID",
             "clientId" : "CLIENT ID",
             "time" : formatter.string(from: Date()),
             "action" : action,
             "lat" : lat,
             "long" : long
+//            "tasks" : json!
         ]
-        print(dict)
+        print(params)
+//        APIManager.shared.postRequest(parameters: params) { result, error in
+//            if let result = result {
+//                print("success: \(result)")
+//            } else if let error = error {
+//                print("error: \(error.localizedDescription)")
+//                self.simpleAlert(title: "Error", message: error.localizedDescription)
+//            }
+//        }
     }
     
     func isValidEmail(_ email: String) -> Bool {

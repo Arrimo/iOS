@@ -14,10 +14,14 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager!
     
-    var user : String? {
+    var patient : Patient? {
         didSet {
-            let destination = "Destination: ".localized()
-            navigationItem.title = destination + user! + "'s House".localized()
+            if let patient = patient {
+                if let firstName = patient.firstName {
+                    let destination = "Destination: ".localized()
+                    navigationItem.title = destination + firstName + "'s House".localized()
+                }
+            }
         }
     }
     
@@ -121,9 +125,9 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
         } else {
-            sendJSON(action: "commuteStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            sendJSON(action: "commuteStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
             let controller = ArrivedController()
-            controller.user = self.user
+            controller.patient = self.patient
             passNavigationTo(nextViewController: controller)
         }
     }
@@ -145,7 +149,7 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
@@ -153,7 +157,7 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))

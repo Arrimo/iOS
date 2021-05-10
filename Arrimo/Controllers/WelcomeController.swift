@@ -122,8 +122,17 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func fetchRoute() {
+        
+        let patient = Patient()
+        patient.firstName = "John"
+        patient.lastName = "Doe"
+        patient.notes = "Loves apples"
+//        patient.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
+        patient.streetAddress = "Odeonsplatz 18, München 80539 Deutschland"
+        patient.birthday = Date()
+        
         let controller = StartCommuteController()
-        controller.user = "Johnathon"
+        controller.patient = patient
         controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -132,7 +141,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
         } else {
-            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
             fetchRoute()
         }
     }

@@ -75,3 +75,5 @@
 "Tasks" = "Aufgaben";
 
 "Minutes" = "Minuten";
+
+"Unable to find patient location information" = "Patientenstandortinformationen können nicht gefunden werden";

@@ -7,12 +7,14 @@
 
 import UIKit
 
-class Task: NSObject {
+class Task: Codable {
     
     var id : String?
     
     var title : String?
     
     var duration : Int?
+    
+    var isChecked : Bool?
 
 }
