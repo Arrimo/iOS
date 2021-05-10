@@ -24,6 +24,10 @@ class TaskCell: UITableViewCell {
                 let string = NSMutableAttributedString(string: taskTitle, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.kufamBold(size: 14)!])
                 string.append(NSAttributedString(string: "\n\(taskDuration) " + "Minutes".localized(), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.kufam(size: 10)!]))
                 label.attributedText = string
+                
+                if task.isChecked == nil {
+                    task.isChecked = false
+                }
             }
         }
     }

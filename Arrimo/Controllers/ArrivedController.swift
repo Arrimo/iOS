@@ -14,10 +14,14 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager!
     
-    var user : String? {
+    var patient : Patient? {
         didSet {
-            let destination = "Destination: ".localized()
-            navigationItem.title = destination + user! + "'s House".localized()
+            if let patient = patient {
+                if let firstName = patient.firstName {
+                    let destination = "Destination: ".localized()
+                    navigationItem.title = destination + firstName + "'s House".localized()
+                }
+            }
         }
     }
     
@@ -122,7 +126,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
             addErrorNotification()
         } else {
-            sendJSON(action: "arrivedDestination", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            self.sendJSON(action: "arrivedDestination", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
             let controller = WorkingController()
             passNavigationTo(nextViewController: controller)
         }
@@ -139,7 +143,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
                 self.locationManager.requestWhenInUseAuthorization()
                 self.addErrorNotification()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
@@ -148,7 +152,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
                 self.locationManager.requestWhenInUseAuthorization()
                 self.addErrorNotification()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))
@@ -158,16 +162,22 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
     
     @objc func mainButtonPressed() {
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
-        let destination = CLLocation(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
-        let current = CLLocation(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
-        let distance = current.distance(from: destination) // meters
-        let maxRadius = 200 // meters
-        print(Int(distance))
-        if Int(distance) > maxRadius {
-            print("far away")
-            self.simpleAlert(title: "Error".localized(), message: "You are too far away from the destination to continue.".localized())
+        if let longitude = patient?.longitude, let latitude = patient?.latitude {
+            let destination = CLLocation(latitude: latitude, longitude: longitude)
+            let current = CLLocation(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
+            let distance = current.distance(from: destination) // meters
+            let maxRadius = 200 // meters
+            print(Int(distance))
+            if Int(distance) > maxRadius {
+                print("far away")
+                self.simpleAlert(title: "Error".localized(), message: "You are too far away from the destination to continue.".localized())
+            } else {
+                self.sendDictionary()
+            }
         } else {
-            self.sendDictionary()
+            print(patient?.longitude)
+            print(patient?.latitude)
+            simpleAlert(title: "Error".localized(), message: "Unable to find patient location information".localized())
         }
     }
 

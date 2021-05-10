@@ -127,7 +127,7 @@ class PauseController: UIViewController, CLLocationManagerDelegate {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
         } else {
-            sendJSON(action: "resume", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude)
+            self.sendJSON(action: "resume", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
             completion()
         }
     }

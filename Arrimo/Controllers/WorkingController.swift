@@ -252,7 +252,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
                 self.addErrorNotification()
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
@@ -261,7 +261,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
                 self.addErrorNotification()
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))
@@ -272,6 +272,12 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     @objc func mainButtonPressed() {
         // start loading
         showLoading()
+        if self.locationManager.location?.coordinate == nil {
+            self.locationManager.requestWhenInUseAuthorization()
+            self.addErrorNotification()
+        } else {
+            self.sendJSON(action: "finishVisit", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+        }
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         hideLoading()
         // action
@@ -297,6 +303,10 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskCell.identifier, for: indexPath) as! TaskCell
         cell.task = tasks[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tasks[indexPath.row].isChecked?.toggle()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
