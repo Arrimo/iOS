@@ -39,6 +39,7 @@
 		7854FC6226493F8E00693FE3 /* Caretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC6126493F8D00693FE3 /* Caretaker.swift */; };
 		7854FC642649508600693FE3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC632649508600693FE3 /* Event.swift */; };
 		7854FC66264957F300693FE3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC65264957F300693FE3 /* Location.swift */; };
+		7854FC68264C1CDC00693FE3 /* RunningInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC67264C1CDC00693FE3 /* RunningInfo.swift */; };
 		78608636262DA201009AC4DC /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608635262DA201009AC4DC /* MainTextField.swift */; };
 		78608644262DA98D009AC4DC /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608643262DA98D009AC4DC /* MainButton.swift */; };
 		78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608648262DA9E1009AC4DC /* UIViewController.swift */; };
@@ -52,6 +53,7 @@
 		788FAA442644379F0018DDB8 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FAA432644379F0018DDB8 /* TaskCell.swift */; };
 		78A1F0EE262986310071958C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A1F0F0262986310071958C /* Localizable.strings */; };
 		78A1F0F9262986540071958C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1F0F8262986540071958C /* Strings.swift */; };
+		78CF5BEE264C4A1500028433 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF5BED264C4A1500028433 /* UIAlertController.swift */; };
 		A1CA7352641577C28A2CEBFD /* Pods_ArrimoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */; };
 		BB4A9D26FA54A0FA93F7D065 /* Pods_Arrimo_ArrimoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B6B855F879386714F2CB0A /* Pods_Arrimo_ArrimoUITests.framework */; };
 		F97DB409157E29B46DF898B4 /* Pods_Arrimo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F361ACC44D3D7E7705255C6D /* Pods_Arrimo.framework */; };
@@ -117,6 +119,7 @@
 		7854FC6126493F8D00693FE3 /* Caretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretaker.swift; sourceTree = "<group>"; };
 		7854FC632649508600693FE3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		7854FC65264957F300693FE3 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7854FC67264C1CDC00693FE3 /* RunningInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInfo.swift; sourceTree = "<group>"; };
 		78608635262DA201009AC4DC /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		78608643262DA98D009AC4DC /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		78608648262DA9E1009AC4DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		78A1F0EF262986310071958C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F4262986420071958C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A1F0F8262986540071958C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		78CF5BED264C4A1500028433 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		D1B6B855F879386714F2CB0A /* Pods_Arrimo_ArrimoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arrimo_ArrimoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BB4CF1C0BADC9FF7DA582A /* Pods-Arrimo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo.release.xcconfig"; path = "Target Support Files/Pods-Arrimo/Pods-Arrimo.release.xcconfig"; sourceTree = "<group>"; };
 		E7FB145EC7EBA6E192E26213 /* Pods-ArrimoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArrimoTests.debug.xcconfig"; path = "Target Support Files/Pods-ArrimoTests/Pods-ArrimoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 			children = (
 				783017BE2628B8870030BA9F /* AppDelegate.swift */,
 				783017C02628B8870030BA9F /* SceneDelegate.swift */,
+				7854FC67264C1CDC00693FE3 /* RunningInfo.swift */,
 			);
 			path = Startup;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				78A1F0F8262986540071958C /* Strings.swift */,
 				78608648262DA9E1009AC4DC /* UIViewController.swift */,
 				7854FC65264957F300693FE3 /* Location.swift */,
+				78CF5BED264C4A1500028433 /* UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -661,7 +667,9 @@
 				783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */,
 				7854FC66264957F300693FE3 /* Location.swift in Sources */,
 				7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */,
+				78CF5BEE264C4A1500028433 /* UIAlertController.swift in Sources */,
 				786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */,
+				7854FC68264C1CDC00693FE3 /* RunningInfo.swift in Sources */,
 				7854FC6026493F7500693FE3 /* Patient.swift in Sources */,
 				7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */,
 				78608644262DA98D009AC4DC /* MainButton.swift in Sources */,

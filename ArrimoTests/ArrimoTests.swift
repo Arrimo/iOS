@@ -58,7 +58,7 @@ class ArrimoRunMyDayTests: XCTestCase {
     }
     
     func testJSONFormat() throws {
-        let welcomeButton = try XCTUnwrap(welcomeController.mainButton, "No Main Button In Welcome Screen")
+        let _ = try XCTUnwrap(welcomeController.mainButton, "No Main Button In Welcome Screen")
 //        welcomeButton.
     }
     

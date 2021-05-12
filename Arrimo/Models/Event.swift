@@ -9,10 +9,16 @@ import UIKit
 
 class Event: NSObject {
     
-    var patient : String?
+    var patient : Patient?
     
     var caretaker : Caretaker?
     
     var tasks : [Task]?
+    
+    var startTime : Int?
+    
+    var endTime : Int?
+    
+    var completed : Bool?
 
 }

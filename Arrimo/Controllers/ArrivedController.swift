@@ -14,13 +14,19 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager!
     
+    var events : [Event]? {
+        didSet {
+            if let patient = events![RunningInfo.shared.routeIndex].patient {
+                self.patient = patient
+            }
+        }
+    }
+    
     var patient : Patient? {
         didSet {
-            if let patient = patient {
-                if let firstName = patient.firstName {
-                    let destination = "Destination: ".localized()
-                    navigationItem.title = destination + firstName + "'s House".localized()
-                }
+            if let firstName = patient?.firstName {
+                let destination = "Destination: ".localized()
+                navigationItem.title = destination + firstName + "'s House".localized()
             }
         }
     }
@@ -126,8 +132,9 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
             addErrorNotification()
         } else {
-            self.sendJSON(action: "arrivedDestination", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+            self.sendJSON(action: "arrivedDestination", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
             let controller = WorkingController()
+            controller.events = self.events
             passNavigationTo(nextViewController: controller)
         }
     }
@@ -143,7 +150,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
                 self.locationManager.requestWhenInUseAuthorization()
                 self.addErrorNotification()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
@@ -152,7 +159,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
                 self.locationManager.requestWhenInUseAuthorization()
                 self.addErrorNotification()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))
@@ -175,8 +182,6 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
                 self.sendDictionary()
             }
         } else {
-            print(patient?.longitude)
-            print(patient?.latitude)
             simpleAlert(title: "Error".localized(), message: "Unable to find patient location information".localized())
         }
     }

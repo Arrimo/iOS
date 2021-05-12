@@ -14,6 +14,8 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager!
     
+    var runningInfo = RunningInfo.shared
+    
     // MARK: - View Objects
     
     private let appIcon : UIImageView = {
@@ -113,27 +115,83 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func backend() {
-        let name = "nil"
-        if name == "nil" {
-            welcomeLabel.text = "Hello".localized()
+        // BACKEND WORK HERE
+        let me = Caretaker()
+        me.firstName = "Jorge"
+        me.lastName = "Zapata"
+        me.birthday = Date()
+        me.notes = "He is cool"
+        me.id = "1432"
+        
+        // Sets Caretaker
+        RunningInfo.shared.caretaker = me
+        
+        if let firstName = me.firstName {
+            welcomeLabel.text = "Hello".localized() + ", " + firstName
         } else {
-            welcomeLabel.text = "Hello".localized() + ", " + name
+            welcomeLabel.text = "Hello".localized()
         }
     }
     
     private func fetchRoute() {
+        showLoading()
         
-        let patient = Patient()
-        patient.firstName = "John"
-        patient.lastName = "Doe"
-        patient.notes = "Loves apples"
-//        patient.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
-        patient.streetAddress = "Odeonsplatz 18, München 80539 Deutschland"
-        patient.birthday = Date()
+        // FAKE BACKEND DATA
+        let task1 = Task()
+        task1.duration = 5
+        task1.id = "task1ID"
+        task1.isChecked = false
+        task1.title = "Buy Groceries"
+        
+        let task2 = Task()
+        task2.duration = 15
+        task2.id = "task2ID"
+        task2.isChecked = false
+        task2.title = "Sweep Floors"
+        
+        let task3 = Task()
+        task3.duration = 60
+        task3.id = "task3ID"
+        task3.isChecked = false
+        task3.title = "Read a book"
+        
+        let patient1 = Patient()
+        patient1.firstName = "John"
+        patient1.lastName = "Doe"
+        patient1.notes = "Loves apples"
+        patient1.id = "PATIENT-ID-2021"
+        patient1.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
+        patient1.birthday = Date()
+        
+        let patient2 = Patient()
+        patient2.firstName = "Ryan"
+        patient2.lastName = "Pearlman"
+        patient2.notes = "Loves Alabama"
+        patient2.id = "PATIENT-ID-2021-ALAMABA"
+        patient2.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
+        patient2.birthday = Date()
+        
+        let event1 = Event()
+        event1.caretaker = RunningInfo.shared.caretaker
+        event1.patient = patient1
+        event1.startTime = 256265223
+        event1.endTime = 256265632
+        event1.tasks = [task1]
+        
+        let event2 = Event()
+        event2.caretaker = RunningInfo.shared.caretaker
+        event2.patient = patient2
+        event2.startTime = 256265223
+        event2.endTime = 256265632
+        event2.tasks = [task2, task3]
+        
+        RunningInfo.shared.events = [event2, event1]
+        RunningInfo.shared.routeIndex = 0
         
         let controller = StartCommuteController()
-        controller.patient = patient
+        controller.events = RunningInfo.shared.events
         controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        hideLoading()
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -141,7 +199,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
         } else {
-            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: nil, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
             fetchRoute()
         }
     }
