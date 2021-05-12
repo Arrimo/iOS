@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class WorkingController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class WorkingController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, TaskCellDelegate {
     
     // MARK: - Variables
     
@@ -17,6 +17,19 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
             taskLabel.text = "Tasks".localized() + " (\(tasks.count))"
         }
     }
+    
+    var events : [Event]? {
+        didSet {
+            if let patient = events![RunningInfo.shared.routeIndex].patient {
+                self.patient = patient
+                if let tasks = events![RunningInfo.shared.routeIndex].tasks {
+                    self.tasks = tasks
+                }
+            }
+        }
+    }
+    
+    var patient : Patient?
     
     var locationManager : CLLocationManager!
     
@@ -117,7 +130,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
         updateViewConstraints()
         locationServices()
         timer()
-        stubBackend()
+//        stubBackend()
         
         view.backgroundColor = .white
         navigationItem.title = "You're Currently Working".localized()
@@ -219,27 +232,70 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimeLabel), userInfo: nil, repeats: true)
     }
     
-    private func stubBackend() {
-        let task1 = Task()
-        task1.title = "Sweep Floors"
-        task1.duration = 15
-        tasks.append(task1)
-        
-        let task2 = Task()
-        task2.title = "Cook Dinner"
-        task2.duration = 25
-        tasks.append(task2)
-        
-        let task3 = Task()
-        task3.title = "Read Book"
-        task3.duration = 10
-        tasks.append(task3)
-        
-        let task4 = Task()
-        task4.title = "Buy Groceries"
-        task4.duration = 15
-        tasks.append(task4)
+    private func allBoxesAreChecked() -> Bool {
+        let numOfTasks = RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks!.count
+        var currentNum = 0
+        for task in RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks! {
+            if task.isChecked! {
+                currentNum += 1
+            }
+        }
+        if currentNum == numOfTasks {
+            return true
+        } else {
+            return false
+            
+        }
     }
+    
+    private func continueWithTasks() {
+        if self.locationManager.location?.coordinate == nil {
+            self.locationManager.requestWhenInUseAuthorization()
+            self.addErrorNotification()
+        } else {
+            self.sendJSON(action: "finishVisit", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks!)
+            print(RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks!)
+            self.continueToNextScreen()
+        }
+    }
+    
+    private func continueToNextScreen() {
+        // show loading
+        let numberOfEvents = RunningInfo.shared.events!.count - 1
+        if RunningInfo.shared.routeIndex == numberOfEvents {
+            // hide loading
+            print("done for the day")
+        } else {
+            RunningInfo.shared.routeIndex += 1
+            let controller = StartCommuteController()
+            controller.events = RunningInfo.shared.events
+            controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            hideLoading()
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+//    private func stubBackend() {
+//        let task1 = Task()
+//        task1.title = "Sweep Floors"
+//        task1.duration = 15
+//        tasks.append(task1)
+//
+//        let task2 = Task()
+//        task2.title = "Cook Dinner"
+//        task2.duration = 25
+//        tasks.append(task2)
+//
+//        let task3 = Task()
+//        task3.title = "Read Book"
+//        task3.duration = 10
+//        tasks.append(task3)
+//
+//        let task4 = Task()
+//        task4.title = "Buy Groceries"
+//        task4.duration = 15
+//        tasks.append(task4)
+//    }
     
     // MARK: - Objective-C Functions
     
@@ -252,7 +308,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
                 self.addErrorNotification()
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
@@ -261,7 +317,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
                 self.addErrorNotification()
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))
@@ -272,15 +328,19 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     @objc func mainButtonPressed() {
         // start loading
         showLoading()
-        if self.locationManager.location?.coordinate == nil {
-            self.locationManager.requestWhenInUseAuthorization()
-            self.addErrorNotification()
-        } else {
-            self.sendJSON(action: "finishVisit", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
-        }
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
-        hideLoading()
-        // action
+        
+        // what happens if not all checkboxes are complete?
+        if allBoxesAreChecked() {
+            hideLoading()
+            continueWithTasks()
+        } else {
+            let alert = UIAlertController.customActionWithCancel(title: "Wait! Not all tasks have been completed.".localized(), message: "Are you sure you want to continue?".localized()) {
+                self.continueWithTasks()
+            }
+            hideLoading()
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func updateTimeLabel() {
@@ -302,15 +362,19 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskCell.identifier, for: indexPath) as! TaskCell
         cell.task = tasks[indexPath.row]
+        cell.delegate = self
+        cell.indexPath = indexPath
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tasks[indexPath.row].isChecked?.toggle()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 61
+    }
+    
+    // MARK: - TaskCell Delegation
+    
+    func taskCellCheckmarkChecked(_ tableViewCell: TaskCell, tappedIndexAt index: Int) {
+        RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks![index].isChecked!.toggle()
     }
 
 }

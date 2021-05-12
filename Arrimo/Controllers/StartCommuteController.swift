@@ -14,13 +14,21 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager!
     
+    var eventIndex = Int()
+    
+    var events : [Event]? {
+        didSet {
+            if let patient = events![RunningInfo.shared.routeIndex].patient {
+                self.patient = patient
+            }
+        }
+    }
+    
     var patient : Patient? {
         didSet {
-            if let patient = patient {
-                if let firstName = patient.firstName {
-                    let destination = "Destination: ".localized()
-                    navigationItem.title = destination + firstName + "'s House".localized()
-                }
+            if let firstName = patient?.firstName {
+                let destination = "Destination: ".localized()
+                navigationItem.title = destination + firstName + "'s House".localized()
             }
         }
     }
@@ -125,9 +133,9 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
         } else {
-            sendJSON(action: "commuteStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+            sendJSON(action: "commuteStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: nil, tasks: nil)
             let controller = ArrivedController()
-            controller.patient = self.patient
+            controller.events = self.events
             passNavigationTo(nextViewController: controller)
         }
     }
@@ -145,19 +153,19 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.soft)
         print("are you sure you want to pause")
         let alert = UIAlertController(title: "Why are you pausing?".localized(), message: "", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Lunch".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
+        alert.addAction(UIAlertAction(title: "Lunch".localized(), style: UIAlertAction.Style.default, handler: { [self] (alert) in
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
-        alert.addAction(UIAlertAction(title: "Break / Personal".localized(), style: UIAlertAction.Style.default, handler: { (alert) in
+        alert.addAction(UIAlertAction(title: "Break / Personal".localized(), style: UIAlertAction.Style.default, handler: { [self] (alert) in
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: nil, caretaker: nil, tasks: nil)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))

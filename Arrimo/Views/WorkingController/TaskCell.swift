@@ -15,6 +15,10 @@ class TaskCell: UITableViewCell {
     
     // MARK: - Variables
     
+    var delegate : TaskCellDelegate?
+    
+    var indexPath : IndexPath?
+    
     var taskId : String?
     
     var task : Task! {
@@ -80,6 +84,7 @@ class TaskCell: UITableViewCell {
         mainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4.5).isActive = true
         
         contentView.addSubview(checkBox)
+        checkBox.addTarget(self, action: #selector(checkedCheckmark(_:)), for: UIControl.Event.valueChanged)
         checkBox.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
         checkBox.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 9).isActive = true
         checkBox.widthAnchor.constraint(equalToConstant: 30).isActive = true
@@ -96,6 +101,14 @@ class TaskCell: UITableViewCell {
         fatalError()
     }
     
-    // MARK: - Private Functions
+    // MARK: - Objective-C Functions
+    
+    @objc func checkedCheckmark(_ sender: CheckBox) {
+        delegate?.taskCellCheckmarkChecked(self, tappedIndexAt: (indexPath?.row)!)
+    }
 
+}
+
+protocol TaskCellDelegate {
+    func taskCellCheckmarkChecked(_ tableViewCell: TaskCell, tappedIndexAt index: Int)
 }

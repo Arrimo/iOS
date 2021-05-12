@@ -8,5 +8,15 @@
 import UIKit
 
 class Caretaker: NSObject {
+    
+    var firstName : String?
+    
+    var lastName : String?
+    
+    var notes : String?
+    
+    var birthday : Date?
+    
+    var id : String?
 
 }

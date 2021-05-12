@@ -58,7 +58,7 @@
 
 "You are currently on" = "Sie befinden sich gerade in der";
 
-"Press 'Resume' to continue" = "Drücken Sie “Fortsetzen”, um fortzufahren";
+"Press 'Resume' to continue" = "Drücken Sie “Weitermachen”, um fortzufahren";
 
 "RESUME" = "WEITERMACHEN";
 
@@ -77,3 +77,9 @@
 "Minutes" = "Minuten";
 
 "Unable to find patient location information" = "Patientenstandortinformationen können nicht gefunden werden";
+
+"Wait! Not all tasks have been completed." = "Warten Sie! Nicht alle Aufgaben wurden abgeschlossen.";
+
+"Are you sure you want to continue?" = "Sind Sie sicher, dass Sie fortfahren möchten?";
+
+"Continue" = "Weitermachen";
