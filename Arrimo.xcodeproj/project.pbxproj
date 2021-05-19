@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7804A8C92654E0AE008F4427 /* DayReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804A8C82654E0AE008F4427 /* DayReviewController.swift */; };
+		7804A8CB2654E5E7008F4427 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804A8CA2654E5E7008F4427 /* ReviewCell.swift */; };
 		78174C8B2633FF35004088C2 /* PauseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78174C8A2633FF35004088C2 /* PauseController.swift */; };
 		783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017BE2628B8870030BA9F /* AppDelegate.swift */; };
 		783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C02628B8870030BA9F /* SceneDelegate.swift */; };
@@ -81,6 +83,8 @@
 		2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArrimoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA43B3FBC993C9B9CD456E8 /* Pods-ArrimoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArrimoTests.release.xcconfig"; path = "Target Support Files/Pods-ArrimoTests/Pods-ArrimoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4827BDA2BDBEBBDE96884378 /* Pods-Arrimo-ArrimoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo-ArrimoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7804A8C82654E0AE008F4427 /* DayReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayReviewController.swift; sourceTree = "<group>"; };
+		7804A8CA2654E5E7008F4427 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		78174C8A2633FF35004088C2 /* PauseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseController.swift; sourceTree = "<group>"; };
 		783017BB2628B8870030BA9F /* Arrimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arrimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783017BE2628B8870030BA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7804A8CC2654E98E008F4427 /* DayReviewController */ = {
+			isa = PBXGroup;
+			children = (
+				7804A8CA2654E5E7008F4427 /* ReviewCell.swift */,
+			);
+			path = DayReviewController;
+			sourceTree = "<group>";
+		};
 		783017B22628B8870030BA9F = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +260,7 @@
 				786086B126308F5D009AC4DC /* ArrivedController.swift */,
 				78174C8A2633FF35004088C2 /* PauseController.swift */,
 				783A6EE926341C5D00B52900 /* WorkingController.swift */,
+				7804A8C82654E0AE008F4427 /* DayReviewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				788FAA42264437800018DDB8 /* WorkingController */,
+				7804A8CC2654E98E008F4427 /* DayReviewController */,
 				7868124B26458D6A00A62134 /* CheckBox.swift */,
 			);
 			path = Views;
@@ -666,7 +680,9 @@
 				7854FC642649508600693FE3 /* Event.swift in Sources */,
 				783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */,
 				7854FC66264957F300693FE3 /* Location.swift in Sources */,
+				7804A8C92654E0AE008F4427 /* DayReviewController.swift in Sources */,
 				7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */,
+				7804A8CB2654E5E7008F4427 /* ReviewCell.swift in Sources */,
 				78CF5BEE264C4A1500028433 /* UIAlertController.swift in Sources */,
 				786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */,
 				7854FC68264C1CDC00693FE3 /* RunningInfo.swift in Sources */,

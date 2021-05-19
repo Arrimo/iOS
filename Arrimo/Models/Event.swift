@@ -22,3 +22,5 @@ class Event: NSObject {
     var completed : Bool?
 
 }
+
+// caretaker nil json request

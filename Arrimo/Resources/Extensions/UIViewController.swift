@@ -63,8 +63,7 @@ extension UIViewController {
     // MARK: - Logistics
     
     func sendJSON(action: String, long: Double, lat: Double, user: String?, caretaker: String?, tasks: [Task]?) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.mm.yyyy HH:MM:SS"
+        let formatter = ISO8601DateFormatter()
         let params : [String : Any] = [
             "caretaker" : "\(String(describing: caretaker ?? "nil"))",
             "patient" : "\(String(describing: user ?? "nil"))",

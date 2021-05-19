@@ -134,6 +134,7 @@ class ArrivedController: UIViewController, CLLocationManagerDelegate {
         } else {
             self.sendJSON(action: "arrivedDestination", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
             let controller = WorkingController()
+            controller.updateTimeLabel()
             controller.events = self.events
             passNavigationTo(nextViewController: controller)
         }
