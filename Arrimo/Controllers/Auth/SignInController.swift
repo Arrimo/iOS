@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class SignInController: UIViewController, UITextFieldDelegate {
     
@@ -154,10 +155,18 @@ class SignInController: UIViewController, UITextFieldDelegate {
         showLoading()
         if emailTextField.text != "" && passwordTextField.text != "" {
             if isValidEmail(emailTextField.text!) {
-                hideLoading()
-                // throw email function
-                    // success
-                completion()
+                APIManager.shared.signInCaretaker(email: self.emailTextField.text!, password: self.passwordTextField.text!) { success, errorMessage in
+                    if success {
+                        DispatchQueue.main.async {
+                            self.hideLoading()
+                            self.completion()
+                        }
+                    } else {
+                        self.hideLoading()
+                        self.addErrorNotification()
+                        self.simpleAlert(title: "Error".localized(), message: errorMessage!.localized())
+                    }
+                }
             } else {
                 hideLoading()
                 addErrorNotification()

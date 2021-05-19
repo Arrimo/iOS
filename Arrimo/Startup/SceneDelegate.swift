@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,9 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
-        window?.rootViewController = UINavigationController(rootViewController: SignInController())
-//        window?.rootViewController = UINavigationController(rootViewController: WorkingController())
-        window?.makeKeyAndVisible()
+        
+        let accessToken : String? = KeychainWrapper.standard.string(forKey: "accessToken")
+        if accessToken != nil {
+            window?.rootViewController = UINavigationController(rootViewController: WelcomeController())
+            window?.makeKeyAndVisible()
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: SignInController())
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

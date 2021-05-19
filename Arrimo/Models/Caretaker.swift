@@ -18,5 +18,9 @@ class Caretaker: NSObject {
     var birthday : Date?
     
     var id : String?
+    
+    var email : String?
+    
+    var password : String?
 
 }
