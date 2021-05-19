@@ -13,6 +13,7 @@ class MainButton : UIButton {
         super.init(frame: .zero)
         
         titleLabel?.font = UIFont.tekturBold(size: 16)
+        titleLabel?.text = titleLabel?.text?.uppercased()
         
         layer.cornerRadius = 12
         

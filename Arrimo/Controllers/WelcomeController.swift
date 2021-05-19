@@ -162,14 +162,16 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         patient1.id = "PATIENT-ID-2021"
         patient1.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
         patient1.birthday = Date()
+        patient1.gender = "male"
         
         let patient2 = Patient()
-        patient2.firstName = "Ryan"
+        patient2.firstName = "Angela"
         patient2.lastName = "Pearlman"
         patient2.notes = "Loves Alabama"
         patient2.id = "PATIENT-ID-2021-ALAMABA"
         patient2.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
         patient2.birthday = Date()
+        patient2.gender = "female"
         
         let event1 = Event()
         event1.caretaker = RunningInfo.shared.caretaker
@@ -185,7 +187,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         event2.endTime = 256265632
         event2.tasks = [task2, task3]
         
-        RunningInfo.shared.events = [event2, event1]
+        RunningInfo.shared.events = [event1, event2]
         RunningInfo.shared.routeIndex = 0
         
         let controller = StartCommuteController()

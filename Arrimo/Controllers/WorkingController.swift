@@ -145,6 +145,8 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.backIndicatorImage = UIImage()
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage()
+        navigationController?.navigationItem.backButtonTitle = ""
+        navigationItem.hidesBackButton = true
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = UIColor.darkBlue
@@ -261,10 +263,13 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
     
     private func continueToNextScreen() {
         // show loading
+        showLoading()
         let numberOfEvents = RunningInfo.shared.events!.count - 1
         if RunningInfo.shared.routeIndex == numberOfEvents {
             // hide loading
-            print("done for the day")
+            let controller = DayReviewController()
+            hideLoading()
+            navigationController?.pushViewController(controller, animated: true)
         } else {
             RunningInfo.shared.routeIndex += 1
             let controller = StartCommuteController()
@@ -274,28 +279,6 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
             navigationController?.pushViewController(controller, animated: true)
         }
     }
-    
-//    private func stubBackend() {
-//        let task1 = Task()
-//        task1.title = "Sweep Floors"
-//        task1.duration = 15
-//        tasks.append(task1)
-//
-//        let task2 = Task()
-//        task2.title = "Cook Dinner"
-//        task2.duration = 25
-//        tasks.append(task2)
-//
-//        let task3 = Task()
-//        task3.title = "Read Book"
-//        task3.duration = 10
-//        tasks.append(task3)
-//
-//        let task4 = Task()
-//        task4.title = "Buy Groceries"
-//        task4.duration = 15
-//        tasks.append(task4)
-//    }
     
     // MARK: - Objective-C Functions
     

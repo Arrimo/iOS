@@ -33,5 +33,7 @@ class Patient: NSObject {
     var birthday : Date?
     
     var id : String?
+    
+    var gender : String?
 
 }
