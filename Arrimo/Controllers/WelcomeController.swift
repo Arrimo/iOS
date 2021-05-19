@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import SwiftKeychainWrapper
 
 class WelcomeController: UIViewController, CLLocationManagerDelegate {
     
@@ -45,6 +46,18 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
     let mainButton : MainButton = {
         let button = MainButton(title: "Run My Day".localized())
         button.addTarget(self, action: #selector(mainButtonPressed), for: UIControl.Event.touchUpInside)
+        return button
+    }()
+    
+    let calendarButton : MainButton = {
+        let button = MainButton(title: "Calendar".localized())
+        button.addTarget(self, action: #selector(calendarButtonPressed), for: UIControl.Event.touchUpInside)
+        return button
+    }()
+    
+    let settingsButton : MainButton = {
+        let button = MainButton(title: "Settings".localized())
+        button.addTarget(self, action: #selector(settingsButtonPressed), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -100,6 +113,19 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         mainButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
         mainButton.heightAnchor.constraint(equalToConstant: 47).isActive = true
         mainButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        
+        view.addSubview(calendarButton)
+        calendarButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: 14).isActive = true
+        calendarButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
+        calendarButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
+        calendarButton.widthAnchor.constraint(equalToConstant: (view.frame.size.width - 63) / 2).isActive = true
+        
+        view.addSubview(settingsButton)
+        settingsButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: 14).isActive = true
+        settingsButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        settingsButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
+        settingsButton.widthAnchor.constraint(equalToConstant: (view.frame.size.width - 63) / 2).isActive = true
+        
     }
     
     // MARK: - Private Functions
@@ -214,6 +240,16 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         hideLoading()
         sendDictionary()
+    }
+    
+    @objc func calendarButtonPressed() {
+        let controller = CalendarController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func settingsButtonPressed() {
+        let controller = SettingsController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 
 }

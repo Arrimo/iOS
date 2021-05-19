@@ -8,6 +8,10 @@ target 'Arrimo' do
   # Pods for Arrimo
 
   pod 'MBProgressHUD'
+  
+  pod 'Alamofire'
+  
+  pod 'SwiftKeychainWrapper'
 
   target 'ArrimoTests' do
     inherit! :search_paths

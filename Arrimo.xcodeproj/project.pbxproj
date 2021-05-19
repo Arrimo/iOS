@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7804A8C92654E0AE008F4427 /* DayReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804A8C82654E0AE008F4427 /* DayReviewController.swift */; };
 		7804A8CB2654E5E7008F4427 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804A8CA2654E5E7008F4427 /* ReviewCell.swift */; };
+		7804A8D226553360008F4427 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804A8D126553360008F4427 /* Auth.swift */; };
+		7804A8D626554B3C008F4427 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804A8D526554B3C008F4427 /* SettingsController.swift */; };
+		7804A8D826554B7A008F4427 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804A8D726554B7A008F4427 /* CalendarController.swift */; };
 		78174C8B2633FF35004088C2 /* PauseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78174C8A2633FF35004088C2 /* PauseController.swift */; };
 		783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017BE2628B8870030BA9F /* AppDelegate.swift */; };
 		783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C02628B8870030BA9F /* SceneDelegate.swift */; };
@@ -36,7 +39,7 @@
 		7830183526296C6E0030BA9F /* Kufam-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */; };
 		78301841262970420030BA9F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301840262970420030BA9F /* Fonts.swift */; };
 		783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A6EE926341C5D00B52900 /* WorkingController.swift */; };
-		7854FC5E26493E5F00693FE3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC5D26493E5F00693FE3 /* API.swift */; };
+		7854FC5E26493E5F00693FE3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC5D26493E5F00693FE3 /* APIManager.swift */; };
 		7854FC6026493F7500693FE3 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC5F26493F7500693FE3 /* Patient.swift */; };
 		7854FC6226493F8E00693FE3 /* Caretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC6126493F8D00693FE3 /* Caretaker.swift */; };
 		7854FC642649508600693FE3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC632649508600693FE3 /* Event.swift */; };
@@ -85,6 +88,9 @@
 		4827BDA2BDBEBBDE96884378 /* Pods-Arrimo-ArrimoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo-ArrimoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7804A8C82654E0AE008F4427 /* DayReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayReviewController.swift; sourceTree = "<group>"; };
 		7804A8CA2654E5E7008F4427 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		7804A8D126553360008F4427 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		7804A8D526554B3C008F4427 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		7804A8D726554B7A008F4427 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		78174C8A2633FF35004088C2 /* PauseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseController.swift; sourceTree = "<group>"; };
 		783017BB2628B8870030BA9F /* Arrimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arrimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783017BE2628B8870030BA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +124,7 @@
 		7830181F26296C6D0030BA9F /* Kufam-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kufam-BoldItalic.ttf"; sourceTree = "<group>"; };
 		78301840262970420030BA9F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		783A6EE926341C5D00B52900 /* WorkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingController.swift; sourceTree = "<group>"; };
-		7854FC5D26493E5F00693FE3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7854FC5D26493E5F00693FE3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7854FC5F26493F7500693FE3 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		7854FC6126493F8D00693FE3 /* Caretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretaker.swift; sourceTree = "<group>"; };
 		7854FC632649508600693FE3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -261,6 +267,8 @@
 				78174C8A2633FF35004088C2 /* PauseController.swift */,
 				783A6EE926341C5D00B52900 /* WorkingController.swift */,
 				7804A8C82654E0AE008F4427 /* DayReviewController.swift */,
+				7804A8D526554B3C008F4427 /* SettingsController.swift */,
+				7804A8D726554B7A008F4427 /* CalendarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,7 +297,8 @@
 		783017F72628B9C10030BA9F /* Network Manager */ = {
 			isa = PBXGroup;
 			children = (
-				7854FC5D26493E5F00693FE3 /* API.swift */,
+				7854FC5D26493E5F00693FE3 /* APIManager.swift */,
+				7804A8D126553360008F4427 /* Auth.swift */,
 			);
 			path = "Network Manager";
 			sourceTree = "<group>";
@@ -675,12 +684,15 @@
 				78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */,
 				78301841262970420030BA9F /* Fonts.swift in Sources */,
 				783018022628BB610030BA9F /* Colors.swift in Sources */,
+				7804A8D626554B3C008F4427 /* SettingsController.swift in Sources */,
 				786086AA26304853009AC4DC /* MainOrangeButton.swift in Sources */,
 				7868124C26458D6A00A62134 /* CheckBox.swift in Sources */,
+				7804A8D826554B7A008F4427 /* CalendarController.swift in Sources */,
 				7854FC642649508600693FE3 /* Event.swift in Sources */,
 				783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */,
 				7854FC66264957F300693FE3 /* Location.swift in Sources */,
 				7804A8C92654E0AE008F4427 /* DayReviewController.swift in Sources */,
+				7804A8D226553360008F4427 /* Auth.swift in Sources */,
 				7860868D262F198B009AC4DC /* WelcomeController.swift in Sources */,
 				7804A8CB2654E5E7008F4427 /* ReviewCell.swift in Sources */,
 				78CF5BEE264C4A1500028433 /* UIAlertController.swift in Sources */,
@@ -691,7 +703,7 @@
 				78608644262DA98D009AC4DC /* MainButton.swift in Sources */,
 				7854FC6226493F8E00693FE3 /* Caretaker.swift in Sources */,
 				783017BF2628B8870030BA9F /* AppDelegate.swift in Sources */,
-				7854FC5E26493E5F00693FE3 /* API.swift in Sources */,
+				7854FC5E26493E5F00693FE3 /* APIManager.swift in Sources */,
 				78A1F0F9262986540071958C /* Strings.swift in Sources */,
 				783017C12628B8870030BA9F /* SceneDelegate.swift in Sources */,
 				788FAA41264435E60018DDB8 /* Task.swift in Sources */,
