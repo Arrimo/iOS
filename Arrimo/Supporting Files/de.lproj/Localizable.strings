@@ -58,9 +58,9 @@
 
 "You are currently on" = "Sie befinden sich gerade in der";
 
-"Press 'Resume' to continue" = "Drücken Sie “Weitermachen”, um fortzufahren";
+"Press 'Resume' to continue" = "Drücken Sie “Fortsetzen”, um weitermachen";
 
-"RESUME" = "WEITERMACHEN";
+"RESUME" = "FORTSETZEN";
 
 "You are too far away from the destination to continue." = "Sie sind zu weit vom Ziel entfernt, um fortzufahren.";
 
