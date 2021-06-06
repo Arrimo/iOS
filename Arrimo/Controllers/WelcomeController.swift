@@ -145,9 +145,11 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         let me = Caretaker()
         me.firstName = "Jorge"
         me.lastName = "Zapata"
+        me.email = "jorgejaden@gmail.com"
         me.birthday = Date()
         me.notes = "He is cool"
         me.id = "1432"
+        me.gender = "male1"
         
         // Sets Caretaker
         RunningInfo.shared.caretaker = me
@@ -244,11 +246,13 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
     
     @objc func calendarButtonPressed() {
         let controller = CalendarController()
+        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func settingsButtonPressed() {
         let controller = SettingsController()
+        add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         navigationController?.pushViewController(controller, animated: true)
     }
 

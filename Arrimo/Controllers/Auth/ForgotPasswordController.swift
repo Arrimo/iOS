@@ -74,13 +74,24 @@ class ForgotPasswordController: UIViewController, UITextFieldDelegate {
     @objc func mainButtonPressed() {
         // start loading
         showLoading()
+        print("got there first")
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
-        if emailTextField.text != "" {
-            hideLoading()
-            // throw sign in function
-                // haptics
-                // alerts
-            simpleAlert(title: "Success".localized(), message: "A password reset link has been sent.".localized())
+        if emailTextField.text != "" && isValidEmail(emailTextField.text!) == true {
+            print("got there second")
+            APIManager.shared.sendPasswordResetLink(withEmail: self.emailTextField.text!) { wasSuccessful, response in
+                if wasSuccessful {
+                    DispatchQueue.main.async {
+                        self.hideLoading()
+                        self.simpleAlert(title: "Success".localized(), message: "Password reset link has been sent".localized())
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.hideLoading()
+                        self.addErrorNotification()
+                        self.simpleAlert(title: "Error".localized(), message: response!)
+                    }
+                }
+            }
         } else {
             hideLoading()
             addErrorNotification()
