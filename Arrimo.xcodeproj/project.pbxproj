@@ -45,6 +45,8 @@
 		7854FC642649508600693FE3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC632649508600693FE3 /* Event.swift */; };
 		7854FC66264957F300693FE3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC65264957F300693FE3 /* Location.swift */; };
 		7854FC68264C1CDC00693FE3 /* RunningInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7854FC67264C1CDC00693FE3 /* RunningInfo.swift */; };
+		785EE975266CE00E00FBEDE0 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785EE974266CE00E00FBEDE0 /* Me.swift */; };
+		785EE977266CE85700FBEDE0 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785EE976266CE85700FBEDE0 /* ChangePasswordController.swift */; };
 		78608636262DA201009AC4DC /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608635262DA201009AC4DC /* MainTextField.swift */; };
 		78608644262DA98D009AC4DC /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608643262DA98D009AC4DC /* MainButton.swift */; };
 		78608649262DA9E1009AC4DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78608648262DA9E1009AC4DC /* UIViewController.swift */; };
@@ -130,6 +132,8 @@
 		7854FC632649508600693FE3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		7854FC65264957F300693FE3 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7854FC67264C1CDC00693FE3 /* RunningInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInfo.swift; sourceTree = "<group>"; };
+		785EE974266CE00E00FBEDE0 /* Me.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
+		785EE976266CE85700FBEDE0 /* ChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
 		78608635262DA201009AC4DC /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		78608643262DA98D009AC4DC /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		78608648262DA9E1009AC4DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 				783A6EE926341C5D00B52900 /* WorkingController.swift */,
 				7804A8C82654E0AE008F4427 /* DayReviewController.swift */,
 				7804A8D526554B3C008F4427 /* SettingsController.swift */,
+				785EE976266CE85700FBEDE0 /* ChangePasswordController.swift */,
 				7804A8D726554B7A008F4427 /* CalendarController.swift */,
 			);
 			path = Controllers;
@@ -290,6 +295,7 @@
 				7854FC5F26493F7500693FE3 /* Patient.swift */,
 				7854FC6126493F8D00693FE3 /* Caretaker.swift */,
 				7854FC632649508600693FE3 /* Event.swift */,
+				785EE974266CE00E00FBEDE0 /* Me.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -689,6 +695,7 @@
 				7868124C26458D6A00A62134 /* CheckBox.swift in Sources */,
 				7804A8D826554B7A008F4427 /* CalendarController.swift in Sources */,
 				7854FC642649508600693FE3 /* Event.swift in Sources */,
+				785EE977266CE85700FBEDE0 /* ChangePasswordController.swift in Sources */,
 				783A6EEA26341C5D00B52900 /* WorkingController.swift in Sources */,
 				7854FC66264957F300693FE3 /* Location.swift in Sources */,
 				7804A8C92654E0AE008F4427 /* DayReviewController.swift in Sources */,
@@ -699,6 +706,7 @@
 				786086B226308F5D009AC4DC /* ArrivedController.swift in Sources */,
 				7854FC68264C1CDC00693FE3 /* RunningInfo.swift in Sources */,
 				7854FC6026493F7500693FE3 /* Patient.swift in Sources */,
+				785EE975266CE00E00FBEDE0 /* Me.swift in Sources */,
 				7860864E262DAD2C009AC4DC /* ForgotPasswordController.swift in Sources */,
 				78608644262DA98D009AC4DC /* MainButton.swift in Sources */,
 				7854FC6226493F8E00693FE3 /* Caretaker.swift in Sources */,

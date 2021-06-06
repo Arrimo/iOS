@@ -57,15 +57,57 @@ extension APIManager {
         task.resume()
     }
     
+    func sendPasswordResetLink(withEmail email: String, completion: @escaping (Bool, String?) -> ()) {
+        let semaphore = DispatchSemaphore (value: 0)
+        let parameters = "{\n    \"email\": \"\(email)\"\n}"
+        let postData = parameters.data(using: .utf8)
+        var request = URLRequest(url: URL(string: "https://arrimo-api-dev.azurewebsites.net/caretakers/forgot-password")!,timeoutInterval: Double.infinity)
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = postData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(false, error!.localizedDescription)
+                }
+                semaphore.signal()
+                return
+            }
+            semaphore.signal()
+            completion(true, String(data: data, encoding: .utf8)!)
+        }
+        
+        task.resume()
+        semaphore.wait()
+    }
+    
+    func changePassword(currentPassword: String, newPassword: String, completion: @escaping (Bool, String?) -> ()) {
+        let semaphore = DispatchSemaphore (value: 0)
+        let parameters = "{\n    \"email\": \"\(RunningInfo.shared.caretaker!.email!)\",\n    \"currentPassword\": \"\(currentPassword)\",\n    \"newPassword\": \"\(newPassword)\"\n}"
+        let postData = parameters.data(using: .utf8)
+        var request = URLRequest(url: URL(string: "https://arrimo-api-dev.azurewebsites.net/caretakers/change-password")!,timeoutInterval: Double.infinity)
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("TiPMix=88.2382550222046; x-ms-routing-name=self", forHTTPHeaderField: "Cookie")
+        request.httpMethod = "POST"
+        request.httpBody = postData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(false, error!.localizedDescription)
+                }
+                semaphore.signal()
+                return
+            }
+            semaphore.signal()
+            completion(true, String(data: data, encoding: .utf8) ?? "Password changed".localized())
+        }
+        task.resume()
+        semaphore.wait()
+
+    }
+    
 }
-
-
-/*
- 
-     showLoading()
-     KeychainWrapper.standard.remove(forKey: "accessToken")
-     KeychainWrapper.standard.remove(forKey: "userId")
-     hideLoading()
-     self.dismiss(animated: true, completion: nil)
- 
- */

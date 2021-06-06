@@ -35,6 +35,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setNavigationBarDefaults() {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.tekturBold(size: 17)!, NSAttributedString.Key.foregroundColor : UIColor.black]
     }
+    
+    private func sendJSON(action: String, long: Double, lat: Double, user: String?, caretaker: String?, tasks: [Task]?) {
+        let formatter = ISO8601DateFormatter()
+        let params : [String : Any] = [
+            "caretaker" : "\(String(describing: caretaker ?? "nil"))",
+            "patient" : "\(String(describing: user ?? "nil"))",
+            "time" : formatter.string(from: Date()),
+            "action" : action,
+            "lat" : lat,
+            "long" : long
+//            "tasks" : json!
+        ]
+        print(params)
+//        APIManager.shared.postRequest(parameters: params) { result, error in
+//            if let result = result {
+//                print("success: \(result)")
+//            } else if let error = error {
+//                print("error: \(error.localizedDescription)")
+//                self.simpleAlert(title: "Error", message: error.localizedDescription)
+//            }
+//        }
+    }
 
 
 }
