@@ -116,7 +116,7 @@ class ChangePasswordController: UIViewController, UITextFieldDelegate {
                         if isSuccessful {
                             self.hideLoading()
                             self.addSuccessNotification()
-                            self.simpleAlert(title: "Success".localized(), message: response!)
+                            self.simpleAlert(title: "Success".localized(), message: "Your password has been successfully changed.".localized())
                         } else {
                             self.hideLoading()
                             self.addErrorNotification()

@@ -102,8 +102,10 @@ extension APIManager {
                 semaphore.signal()
                 return
             }
+            DispatchQueue.main.async {
+                completion(true, String(data: data, encoding: .utf8) ?? "Password changed".localized())
+            }
             semaphore.signal()
-            completion(true, String(data: data, encoding: .utf8) ?? "Password changed".localized())
         }
         task.resume()
         semaphore.wait()
