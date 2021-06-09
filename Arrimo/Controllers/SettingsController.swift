@@ -451,6 +451,8 @@ class SettingsController: UIViewController {
             KeychainWrapper.standard.removeObject(forKey: "accessToken")
             KeychainWrapper.standard.removeObject(forKey: "userId")
             let controller = SignInController()
+            controller.viewDidLoad()
+            controller.updateViewConstraints()
             controller.modalPresentationStyle = UIModalPresentationStyle.fullScreen
             self.present(controller, animated: true, completion: nil)
         }))
