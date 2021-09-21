@@ -428,8 +428,18 @@ class SettingsController: UIViewController {
     }
     
     private func backend() {
-        profileImage.image = UIImage(named: RunningInfo.shared.caretaker!.gender!)
-        titleName.text = RunningInfo.shared.caretaker!.firstName! + " " + RunningInfo.shared.caretaker!.lastName!
+        if let employee = RunningInfo.shared.employee {
+            if let sex = employee.sex {
+                if sex == "diverse" {
+                    profileImage.image = UIImage(named: "male")
+                } else {
+                    profileImage.image = UIImage(named: sex)
+                }
+            }
+            if let firstName = employee.firstName, let lastName = employee.lastName {
+                titleName.text = firstName + " " + lastName
+            }
+        }
     }
     
     // MARK: - Objective-C Functions

@@ -9,7 +9,7 @@ import Foundation
 
 class RunningInfo {
     
-    var caretaker : Caretaker?
+    var employee : Employee?
     
     static let shared = RunningInfo()
     

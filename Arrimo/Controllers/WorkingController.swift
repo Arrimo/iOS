@@ -255,7 +255,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
             self.locationManager.requestWhenInUseAuthorization()
             self.addErrorNotification()
         } else {
-            self.sendJSON(action: "finishVisit", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks!)
+            self.sendJSON(action: "finishVisit", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.employee!.id!, tasks: RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks!)
             print(RunningInfo.shared.events![RunningInfo.shared.routeIndex].tasks!)
             self.continueToNextScreen()
         }
@@ -291,7 +291,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
                 self.addErrorNotification()
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.employee!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
@@ -300,7 +300,7 @@ class WorkingController: UIViewController, CLLocationManagerDelegate, UITableVie
                 self.addErrorNotification()
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.employee!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))

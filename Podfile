@@ -12,6 +12,8 @@ target 'Arrimo' do
   pod 'Alamofire'
   
   pod 'SwiftKeychainWrapper'
+  
+  pod 'KVKCalendar'
 
   target 'ArrimoTests' do
     inherit! :search_paths

@@ -157,7 +157,7 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
+                self.sendJSON(action: "lunchStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.employee!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "LUNCH BREAK".localized())
             }
         }))
@@ -165,7 +165,7 @@ class StartCommuteController: UIViewController, CLLocationManagerDelegate {
             if self.locationManager.location?.coordinate == nil {
                 self.locationManager.requestWhenInUseAuthorization()
             } else {
-                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
+                self.sendJSON(action: "pauseStart", long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, user: self.patient!.id!, caretaker: RunningInfo.shared.employee!.id!, tasks: nil)
                 self.sendToPauseScreen(withAction: "PAUSE".localized())
             }
         }))

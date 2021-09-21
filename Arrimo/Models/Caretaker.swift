@@ -5,7 +5,7 @@
 //  Created by JJ Zapata on 5/10/21.
 //
 
-import UIKit
+import Foundation
 
 class Caretaker: NSObject {
     
