@@ -11,7 +11,7 @@ class Event: NSObject {
     
     var patient : Patient?
     
-    var caretaker : Caretaker?
+    var employee : Employee?
     
     var tasks : [Task]?
     
@@ -22,5 +22,3 @@ class Event: NSObject {
     var completed : Bool?
 
 }
-
-// caretaker nil json request

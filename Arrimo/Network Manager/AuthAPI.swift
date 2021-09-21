@@ -12,7 +12,7 @@ import SwiftKeychainWrapper
 extension APIManager {
     
     func signInCaretaker(email: String, password: String, completion: @escaping (Bool, String?) -> ()) {
-        let url = URL(string: "https://arrimo-api-dev.azurewebsites.net/auth/caretaker/login")
+        let url = URL(string: "https://arrimo-api-dev.azurewebsites.net/auth/employee/login")
         let parameters = "{\n    \"email\": \"\(email)\",\n    \"password\": \"\(password)\"\n}"
         let postData = parameters.data(using: .utf8)
         var request = URLRequest(url: url!, timeoutInterval: Double.infinity)
@@ -85,7 +85,7 @@ extension APIManager {
     
     func changePassword(currentPassword: String, newPassword: String, completion: @escaping (Bool, String?) -> ()) {
         let semaphore = DispatchSemaphore (value: 0)
-        let parameters = "{\n    \"email\": \"\(RunningInfo.shared.caretaker!.email!)\",\n    \"currentPassword\": \"\(currentPassword)\",\n    \"newPassword\": \"\(newPassword)\"\n}"
+        let parameters = "{\n    \"email\": \"\(RunningInfo.shared.employee!.email!)\",\n    \"currentPassword\": \"\(currentPassword)\",\n    \"newPassword\": \"\(newPassword)\"\n}"
         let postData = parameters.data(using: .utf8)
         var request = URLRequest(url: URL(string: "https://arrimo-api-dev.azurewebsites.net/caretakers/change-password")!,timeoutInterval: Double.infinity)
         

@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/KVKCalendar/KVKCalendar.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework

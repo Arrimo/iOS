@@ -67,8 +67,6 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         backend()
-        locationServices()
-        updateViewConstraints()
         
         view.backgroundColor = .white
         
@@ -142,22 +140,21 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
     
     private func backend() {
         // BACKEND WORK HERE
-        let me = Caretaker()
-        me.firstName = "Jorge"
-        me.lastName = "Zapata"
-        me.email = "jorgejaden@gmail.com"
-        me.birthday = Date()
-        me.notes = "He is cool"
-        me.id = "1432"
-        me.gender = "male1"
         
-        // Sets Caretaker
-        RunningInfo.shared.caretaker = me
-        
-        if let firstName = me.firstName {
-            welcomeLabel.text = "Hello".localized() + ", " + firstName
-        } else {
-            welcomeLabel.text = "Hello".localized()
+        // MARK: - Todo
+        EmployeeAPI.shared.fetchEmployeeInformation { employee in
+            DispatchQueue.main.async {
+                RunningInfo.shared.employee = employee
+                if let firstName = employee.firstName {
+                    self.welcomeLabel.text = "Hello".localized() + ", " + firstName
+                } else {
+                    self.welcomeLabel.text = "Hello".localized()
+                }
+
+                // on success
+                self.locationServices()
+                self.updateViewConstraints()
+            }
         }
     }
     
@@ -202,14 +199,14 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         patient2.gender = "female"
         
         let event1 = Event()
-        event1.caretaker = RunningInfo.shared.caretaker
+        event1.employee = RunningInfo.shared.employee
         event1.patient = patient1
         event1.startTime = 256265223
         event1.endTime = 256265632
         event1.tasks = [task1]
         
         let event2 = Event()
-        event2.caretaker = RunningInfo.shared.caretaker
+        event2.employee = RunningInfo.shared.employee
         event2.patient = patient2
         event2.startTime = 256265223
         event2.endTime = 256265632
@@ -229,7 +226,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         if locationManager.location?.coordinate == nil {
             locationManager.requestWhenInUseAuthorization()
         } else {
-            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: nil, caretaker: RunningInfo.shared.caretaker!.id!, tasks: nil)
+            sendJSON(action: "runMyDayStart", long: locationManager.location!.coordinate.longitude, lat: locationManager.location!.coordinate.latitude, user: nil, caretaker: RunningInfo.shared.employee!.id!, tasks: nil)
             fetchRoute()
         }
     }
