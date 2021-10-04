@@ -18,8 +18,6 @@
 		783017C32628B8870030BA9F /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017C22628B8870030BA9F /* SignInController.swift */; };
 		783017C82628B88D0030BA9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783017C72628B88D0030BA9F /* Assets.xcassets */; };
 		783017CB2628B88D0030BA9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783017C92628B88D0030BA9F /* LaunchScreen.storyboard */; };
-		783017D62628B88D0030BA9F /* ArrimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017D52628B88D0030BA9F /* ArrimoTests.swift */; };
-		783017E12628B88E0030BA9F /* ArrimoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783017E02628B88E0030BA9F /* ArrimoUITests.swift */; };
 		783018022628BB610030BA9F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783018012628BB610030BA9F /* Colors.swift */; };
 		7830182026296C6E0030BA9F /* Tektur-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830180826296C6C0030BA9F /* Tektur-ExtraBold.ttf */; };
 		7830182126296C6E0030BA9F /* Tektur-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7830180926296C6C0030BA9F /* Tektur-SemiBold.ttf */; };
@@ -64,27 +62,8 @@
 		78BD3FF326EC377300D5E7BB /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD3FF226EC377300D5E7BB /* Employee.swift */; };
 		78BD3FF626EC382000D5E7BB /* EmployeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD3FF526EC382000D5E7BB /* EmployeeAPI.swift */; };
 		78CF5BEE264C4A1500028433 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF5BED264C4A1500028433 /* UIAlertController.swift */; };
-		A1CA7352641577C28A2CEBFD /* Pods_ArrimoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D05C5F524209CE3C46C83ED /* Pods_ArrimoTests.framework */; };
-		BB4A9D26FA54A0FA93F7D065 /* Pods_Arrimo_ArrimoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B6B855F879386714F2CB0A /* Pods_Arrimo_ArrimoUITests.framework */; };
 		F97DB409157E29B46DF898B4 /* Pods_Arrimo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F361ACC44D3D7E7705255C6D /* Pods_Arrimo.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		783017D22628B88D0030BA9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 783017B32628B8870030BA9F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 783017BA2628B8870030BA9F;
-			remoteInfo = Arrimo;
-		};
-		783017DD2628B88D0030BA9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 783017B32628B8870030BA9F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 783017BA2628B8870030BA9F;
-			remoteInfo = Arrimo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0D8C899DA73E51DB2A9F5EB2 /* Pods-Arrimo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrimo.debug.xcconfig"; path = "Target Support Files/Pods-Arrimo/Pods-Arrimo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,12 +83,6 @@
 		783017C72628B88D0030BA9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		783017CA2628B88D0030BA9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		783017CC2628B88D0030BA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		783017D12628B88D0030BA9F /* ArrimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArrimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		783017D52628B88D0030BA9F /* ArrimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrimoTests.swift; sourceTree = "<group>"; };
-		783017D72628B88D0030BA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		783017DC2628B88D0030BA9F /* ArrimoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArrimoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		783017E02628B88E0030BA9F /* ArrimoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrimoUITests.swift; sourceTree = "<group>"; };
-		783017E22628B88E0030BA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		783018012628BB610030BA9F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7830180826296C6C0030BA9F /* Tektur-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tektur-ExtraBold.ttf"; sourceTree = "<group>"; };
 		7830180926296C6C0030BA9F /* Tektur-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tektur-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -172,22 +145,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		783017CE2628B88D0030BA9F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1CA7352641577C28A2CEBFD /* Pods_ArrimoTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783017D92628B88D0030BA9F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB4A9D26FA54A0FA93F7D065 /* Pods_Arrimo_ArrimoUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -216,8 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				783017BD2628B8870030BA9F /* Arrimo */,
-				783017D42628B88D0030BA9F /* ArrimoTests */,
-				783017DF2628B88D0030BA9F /* ArrimoUITests */,
 				783017BC2628B8870030BA9F /* Products */,
 				4AC8CF9FD8D6E0EE7AD43A48 /* Pods */,
 				B334652A62766C8C619AC6CE /* Frameworks */,
@@ -228,8 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				783017BB2628B8870030BA9F /* Arrimo.app */,
-				783017D12628B88D0030BA9F /* ArrimoTests.xctest */,
-				783017DC2628B88D0030BA9F /* ArrimoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,24 +200,6 @@
 				783017F92628B9D40030BA9F /* Startup */,
 			);
 			path = Arrimo;
-			sourceTree = "<group>";
-		};
-		783017D42628B88D0030BA9F /* ArrimoTests */ = {
-			isa = PBXGroup;
-			children = (
-				783017D52628B88D0030BA9F /* ArrimoTests.swift */,
-				783017D72628B88D0030BA9F /* Info.plist */,
-			);
-			path = ArrimoTests;
-			sourceTree = "<group>";
-		};
-		783017DF2628B88D0030BA9F /* ArrimoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				783017E02628B88E0030BA9F /* ArrimoUITests.swift */,
-				783017E22628B88E0030BA9F /* Info.plist */,
-			);
-			path = ArrimoUITests;
 			sourceTree = "<group>";
 		};
 		783017F42628B9960030BA9F /* Controllers */ = {
@@ -468,45 +403,6 @@
 			productReference = 783017BB2628B8870030BA9F /* Arrimo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		783017D02628B88D0030BA9F /* ArrimoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 783017E82628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoTests" */;
-			buildPhases = (
-				5E666E80E645598A4C9D6FFC /* [CP] Check Pods Manifest.lock */,
-				783017CD2628B88D0030BA9F /* Sources */,
-				783017CE2628B88D0030BA9F /* Frameworks */,
-				783017CF2628B88D0030BA9F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				783017D32628B88D0030BA9F /* PBXTargetDependency */,
-			);
-			name = ArrimoTests;
-			productName = ArrimoTests;
-			productReference = 783017D12628B88D0030BA9F /* ArrimoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		783017DB2628B88D0030BA9F /* ArrimoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 783017EB2628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoUITests" */;
-			buildPhases = (
-				E15F5177EB8BB09813AFEAD4 /* [CP] Check Pods Manifest.lock */,
-				783017D82628B88D0030BA9F /* Sources */,
-				783017D92628B88D0030BA9F /* Frameworks */,
-				783017DA2628B88D0030BA9F /* Resources */,
-				F20F7649A6D7B2F55CF18998 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				783017DE2628B88D0030BA9F /* PBXTargetDependency */,
-			);
-			name = ArrimoUITests;
-			productName = ArrimoUITests;
-			productReference = 783017DC2628B88D0030BA9F /* ArrimoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -518,14 +414,6 @@
 				TargetAttributes = {
 					783017BA2628B8870030BA9F = {
 						CreatedOnToolsVersion = 12.4;
-					};
-					783017D02628B88D0030BA9F = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 783017BA2628B8870030BA9F;
-					};
-					783017DB2628B88D0030BA9F = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 783017BA2628B8870030BA9F;
 					};
 				};
 			};
@@ -544,8 +432,6 @@
 			projectRoot = "";
 			targets = (
 				783017BA2628B8870030BA9F /* Arrimo */,
-				783017D02628B88D0030BA9F /* ArrimoTests */,
-				783017DB2628B88D0030BA9F /* ArrimoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -577,45 +463,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		783017CF2628B88D0030BA9F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783017DA2628B88D0030BA9F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E666E80E645598A4C9D6FFC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArrimoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7D4DB44FFECC55AB716B9266 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -653,45 +503,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arrimo/Pods-Arrimo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E15F5177EB8BB09813AFEAD4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Arrimo-ArrimoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F20F7649A6D7B2F55CF18998 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arrimo-ArrimoUITests/Pods-Arrimo-ArrimoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -740,36 +551,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		783017CD2628B88D0030BA9F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				783017D62628B88D0030BA9F /* ArrimoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783017D82628B88D0030BA9F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				783017E12628B88E0030BA9F /* ArrimoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		783017D32628B88D0030BA9F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 783017BA2628B8870030BA9F /* Arrimo */;
-			targetProxy = 783017D22628B88D0030BA9F /* PBXContainerItemProxy */;
-		};
-		783017DE2628B88D0030BA9F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 783017BA2628B8870030BA9F /* Arrimo */;
-			targetProxy = 783017DD2628B88D0030BA9F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		783017C92628B88D0030BA9F /* LaunchScreen.storyboard */ = {
@@ -956,94 +738,6 @@
 			};
 			name = Release;
 		};
-		783017E92628B88E0030BA9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7FB145EC7EBA6E192E26213 /* Pods-ArrimoTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZH735L9VC9;
-				INFOPLIST_FILE = ArrimoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arrimo.app/Arrimo";
-			};
-			name = Debug;
-		};
-		783017EA2628B88E0030BA9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AA43B3FBC993C9B9CD456E8 /* Pods-ArrimoTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZH735L9VC9;
-				INFOPLIST_FILE = ArrimoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arrimo.app/Arrimo";
-			};
-			name = Release;
-		};
-		783017EC2628B88E0030BA9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4827BDA2BDBEBBDE96884378 /* Pods-Arrimo-ArrimoUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZH735L9VC9;
-				INFOPLIST_FILE = ArrimoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Arrimo;
-			};
-			name = Debug;
-		};
-		783017ED2628B88E0030BA9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FEA7A619D65505AF37A14997 /* Pods-Arrimo-ArrimoUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZH735L9VC9;
-				INFOPLIST_FILE = ArrimoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.ArrimoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Arrimo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1061,24 +755,6 @@
 			buildConfigurations = (
 				783017E62628B88E0030BA9F /* Debug */,
 				783017E72628B88E0030BA9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		783017E82628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				783017E92628B88E0030BA9F /* Debug */,
-				783017EA2628B88E0030BA9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		783017EB2628B88E0030BA9F /* Build configuration list for PBXNativeTarget "ArrimoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				783017EC2628B88E0030BA9F /* Debug */,
-				783017ED2628B88E0030BA9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
