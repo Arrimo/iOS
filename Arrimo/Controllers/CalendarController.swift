@@ -32,6 +32,7 @@ class CalendarController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = UIColor.darkBlue
+        navigationItem.title = "Calendar".localized()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -8,41 +8,53 @@
 import SwiftKeychainWrapper
 import Foundation
 import UIKit
+import JWTDecode    
 
 final class EmployeeAPI {
     
     static let shared = EmployeeAPI()
     
     func fetchEmployeeInformation(onCompletion: @escaping (Employee) -> ()) {
-        
         let semaphore = DispatchSemaphore (value: 0)
-        let key = KeychainWrapper.standard.string(forKey: "accessToken")!
-        var request = URLRequest(url: URL(string: "https://arrimo-api-dev.azurewebsites.net/employees/b2a38764-a4aa-414e-bc3f-f9a7c4e56ccf")!,timeoutInterval: Double.infinity)
-        request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
-        request.addValue("TiPMix=99.5416878254813; x-ms-routing-name=self", forHTTPHeaderField: "Cookie")
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print(String(describing: error))
-                semaphore.signal()
-                return
-            }
-            print(String(data: data, encoding: .utf8)!)
+        if let key = KeychainWrapper.standard.string(forKey: "accessToken") {
             do {
-                guard let employee = try? JSONDecoder().decode(Employee.self, from: data) else {
-                    print("error employee")
+                let jwt = try JWTDecode.decode(jwt: key)
+                guard let id = jwt.subject else {
+                    print("error parsing access token to id")
                     return
                 }
-                onCompletion(employee)
+                var request = URLRequest(url: URL(string: "https://arrimo-api-dev.azurewebsites.net/employees/\(id)")!,timeoutInterval: Double.infinity)
+                request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+                request.addValue("TiPMix=99.5416878254813; x-ms-routing-name=self", forHTTPHeaderField: "Cookie")
+                request.httpMethod = "GET"
+                
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data else {
+                        print("Error: \(String(describing: error))")
+                        semaphore.signal()
+                        return
+                    }
+                    print(String(data: data, encoding: .utf8)!)
+                    do {
+                        guard let employee = try? JSONDecoder().decode(Employee.self, from: data) else {
+                            print("Error parsing JSON")
+                            return
+                        }
+                        onCompletion(employee)
+                    }
+                    semaphore.signal()
+                }
+                
+                task.resume()
+                semaphore.wait()
             } catch let error {
-                print("error: \(error.localizedDescription)")
+                print("error fetching id: \(error.localizedDescription)")
+                return
             }
-            print("success")
-            semaphore.signal()
+        } else  {
+            print("error finding access token")
+            return
         }
-        
-        task.resume()
-        semaphore.wait()
     }
+    
 }

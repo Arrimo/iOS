@@ -144,7 +144,7 @@ class SignInController: UIViewController, UITextFieldDelegate {
     private func completion() {
         let controller = WelcomeController()
         controller.modalPresentationStyle = .fullScreen
-        UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: controller)
+        UIApplication.shared.keyWindow!.rootViewController = UINavigationController(rootViewController: controller)
     }
     
     // MARK: - Objective-C Functions

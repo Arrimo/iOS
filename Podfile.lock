@@ -1,11 +1,13 @@
 PODS:
-  - Alamofire (5.4.1)
-  - KVKCalendar (0.5.1)
+  - Alamofire (5.4.3)
+  - JWTDecode (2.6.2)
+  - KVKCalendar (0.5.2)
   - MBProgressHUD (1.2.0)
   - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - JWTDecode
   - KVKCalendar
   - MBProgressHUD
   - SwiftKeychainWrapper
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - JWTDecode
     - KVKCalendar
     - MBProgressHUD
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
-  KVKCalendar: f128a3d801b1ee3c5b255b8fe2b8deda442f044b
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  JWTDecode: 2cc56f950540c95fd11b14ff6388f7c6cb9760ab
+  KVKCalendar: e87c81a01f9e888a8d3e9bac1a131bbcc039d4fd
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 93ddf0ff25ffcad15ef0146e2f35026788312989
+PODFILE CHECKSUM: 64664ac740216eeb45b425fb1821ebd4f3d89a35
 
 COCOAPODS: 1.10.1

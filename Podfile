@@ -14,6 +14,8 @@ target 'Arrimo' do
   pod 'SwiftKeychainWrapper'
   
   pod 'KVKCalendar'
+  
+  pod 'JWTDecode'
 
   target 'ArrimoTests' do
     inherit! :search_paths
