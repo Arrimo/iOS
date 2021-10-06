@@ -9,13 +9,15 @@ import UIKit
 import CoreLocation
 import SwiftKeychainWrapper
 
-class WelcomeController: UIViewController, CLLocationManagerDelegate {
+class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Variables
     
     var locationManager : CLLocationManager!
     
     var runningInfo = RunningInfo.shared
+    
+    var visits : [Visit]?
     
     // MARK: - View Objects
     
@@ -59,6 +61,39 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         let button = MainButton(title: "Settings".localized())
         button.addTarget(self, action: #selector(settingsButtonPressed), for: UIControl.Event.touchUpInside)
         return button
+    }()
+    
+    let todayView : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.aestheticGray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 12
+        return view
+    }()
+    
+    let todayLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Today's Overview".localized()
+        label.textColor = UIColor.darkBlue
+        label.font = UIFont.kufamBold(size: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    
+    let todaySepView : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 8/255, green: 59/255, blue: 102/255, alpha: 0.5)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let todayTableView : UITableView = {
+        let tableView = UITableView()
+        tableView.register(TodayOverviewCell.self, forCellReuseIdentifier: TodayOverviewCell.identifier)
+        tableView.backgroundColor = UIColor.clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
     
     // MARK: - Overriden Functions
@@ -124,6 +159,29 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         settingsButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
         settingsButton.widthAnchor.constraint(equalToConstant: (view.frame.size.width - 63) / 2).isActive = true
         
+        view.addSubview(todayView)
+        todayView.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: 24).isActive = true
+        todayView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
+        todayView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        todayView.heightAnchor.constraint(equalToConstant: 325).isActive = true
+        
+        todayView.addSubview(todayLabel)
+        todayLabel.topAnchor.constraint(equalTo: todayView.topAnchor, constant: 15).isActive = true
+        todayLabel.leftAnchor.constraint(equalTo: todayView.leftAnchor, constant: 14).isActive = true
+        todayLabel.rightAnchor.constraint(equalTo: todayView.rightAnchor, constant: -14).isActive = true
+        todayLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        
+        todayView.addSubview(todaySepView)
+        todaySepView.topAnchor.constraint(equalTo: todayLabel.bottomAnchor, constant: 15).isActive = true
+        todaySepView.leftAnchor.constraint(equalTo: todayView.leftAnchor).isActive = true
+        todaySepView.rightAnchor.constraint(equalTo: todayView.rightAnchor).isActive = true
+        todaySepView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        todayView.addSubview(todayTableView)
+        todayTableView.topAnchor.constraint(equalTo: todaySepView.bottomAnchor, constant: 11.5).isActive = true
+        todayTableView.rightAnchor.constraint(equalTo: todayView.rightAnchor).isActive = true
+        todayTableView.leftAnchor.constraint(equalTo: todayView.leftAnchor).isActive = true
+        todayTableView.bottomAnchor.constraint(equalTo: todayView.bottomAnchor, constant: -12).isActive = true
     }
     
     // MARK: - Private Functions
@@ -139,9 +197,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func backend() {
-        // BACKEND WORK HERE
-        
-        // MARK: - Todo
+        // fetch employee information
         EmployeeAPI.shared.fetchEmployeeInformation { employee in
             DispatchQueue.main.async {
                 RunningInfo.shared.employee = employee
@@ -154,6 +210,38 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
                 // on success
                 self.locationServices()
                 self.updateViewConstraints()
+                self.delegations()
+                
+                // fetch today's visits
+                let patient1 = Patient()
+                patient1.firstName = "John"
+                patient1.lastName = "Doe"
+                patient1.notes = "Loves apples"
+                patient1.id = "PATIENT-ID-2021"
+                patient1.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
+                patient1.birthday = Date()
+                patient1.gender = "male"
+                
+                let task1 = Task1()
+                task1.title = "Wash the Dishes"
+                task1.duration = 10
+                
+                let task2 = Task1()
+                task2.title = "Clean Bedroom"
+                task2.duration = 5
+                
+                let task3 = Task1()
+                task3.title = "Cook Dinner"
+                task3.duration = 30
+                
+                let visit = Visit()
+                visit.employee = RunningInfo.shared.employee
+                visit.patient = patient1
+                visit.startTime = Date()
+                visit.tasks = [task1, task2, task3]
+                
+                self.visits = [visit]
+                self.todayTableView.reloadData()
             }
         }
     }
@@ -231,6 +319,11 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    private func delegations() {
+        todayTableView.delegate = self
+        todayTableView.dataSource = self
+    }
+    
     // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
@@ -251,6 +344,28 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate {
         let controller = SettingsController()
         add3DMotion(withFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle.light)
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // MARK: - UITableView Delegation
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let visits = visits else {
+            return 0
+        }
+        return visits.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TodayOverviewCell.identifier, for: indexPath) as! TodayOverviewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 114 + 9
     }
 
 }

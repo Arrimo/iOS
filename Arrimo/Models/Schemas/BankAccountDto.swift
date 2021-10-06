@@ -9,14 +9,14 @@ import Foundation
 
 struct BankAccountDto : Codable {
     
-    let bankName : String
+    let bankName : String?
     
-    let bankCode : Int
+    let bankCode : Int?
     
-    let acountNumber : Int
+    let acountNumber : Int?
     
-    let IBAN : String
+    let IBAN : String?
     
-    let BIC : String
+    let BIC : String?
     
 }

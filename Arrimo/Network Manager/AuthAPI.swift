@@ -7,7 +7,7 @@
 
 import Alamofire
 import Foundation
-import SwiftKeychainWrapper
+import JWTDecode
 
 extension APIManager {
     
@@ -33,8 +33,11 @@ extension APIManager {
                         if let token = parsedJson["access_token"] as? String {
                             print("Access Token: \(token)")
                             DispatchQueue.main.async {
-                                KeychainWrapper.standard.set(token, forKey: "accessToken")
-                                KeychainWrapper.standard.set("userId", forKey: "userId")
+                                UserDefaults.standard.set(email, forKey: "email")
+                                UserDefaults.standard.set(password, forKey: "password")
+                                UserDefaults.standard.set(token, forKey: "accessToken")
+                                UserDefaults.standard.set(self.getTimeWithToken(token: token), forKey: "expiresAt")
+                                print(self.getTimeWithToken(token: token))
                                 completion(true, "Success")
                             }
                         } else {
@@ -109,7 +112,21 @@ extension APIManager {
         }
         task.resume()
         semaphore.wait()
-
+    }
+    
+    func getTimeWithToken(token: String) -> Int {
+        do {
+            let jwt = try JWTDecode.decode(jwt: token)
+            guard let expireTime = jwt.expiresAt else {
+                print("error parsing access token to timestamp")
+                return 0
+            }
+            let int : Int = Int(expireTime.timeIntervalSince1970)
+            return int
+        } catch let error {
+            print(error.localizedDescription)
+            return 0
+        }
     }
     
 }

@@ -39,7 +39,7 @@ struct Employee : Codable {
 
     let weeklyHours : Int?
 
-//    let address : AddressDto?
+    let address : AddressDto?
 
     let phoneNumber : String?
 
@@ -51,7 +51,7 @@ struct Employee : Codable {
 
     let password : String?
 
-//    let bankAccount : BankAccountDto?
+    let bankAccount : BankAccountDto?
 
     let paymentDate : String?
 

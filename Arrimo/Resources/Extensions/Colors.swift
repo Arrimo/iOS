@@ -18,4 +18,6 @@ extension UIColor {
     
     static let secondaryGray = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1)
     
+    static let aestheticGray = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+    
 }
