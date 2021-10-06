@@ -9,28 +9,28 @@ import Foundation
 
 struct AddressDto : Codable {
     
-    let house : String
+    let house : String?
     
-    let houseInfo : String
+    let houseInfo : String?
     
-    let street : String
+    let street : String?
     
-    let postalCode : String
+    let postalCode : String?
     
-    let district : String
+    let district : String?
     
-    let city : String
+    let city : String?
     
-    let state : String
+    let state : String?
     
-    let stateCode : String
+    let stateCode : String?
     
-    let country : String
+    let country : String?
     
-    let countryCode : String
+    let countryCode : String?
     
-    let lockbox : String
+    let lockbox : String?
     
-    let extra : String
+    let extra : String?
     
 }

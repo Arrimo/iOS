@@ -458,8 +458,10 @@ class SettingsController: UIViewController {
     @objc func button3Tapped() {
         let alert = UIAlertController(title: "Sign Out?".localized(), message: "Are you sure you want to sign out?".localized(), preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
-            KeychainWrapper.standard.removeObject(forKey: "accessToken")
-            KeychainWrapper.standard.removeObject(forKey: "userId")
+            UserDefaults.standard.set("", forKey: "email")
+            UserDefaults.standard.set("", forKey: "password")
+            UserDefaults.standard.set("", forKey: "accessToken")
+            UserDefaults.standard.set(0, forKey: "expiresAt")
             let controller = SignInController()
             controller.viewDidLoad()
             controller.updateViewConstraints()

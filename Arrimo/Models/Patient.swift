@@ -1,39 +1,66 @@
 //
-//  Patient.swift
+//  1Patient.swift
 //  Arrimo
 //
-//  Created by JJ Zapata on 5/10/21.
+//  Created by JJ Zapata on 10/6/21.
 //
 
-import UIKit
+import Foundation
 
-class Patient: NSObject {
+struct Patient1 : Codable {
     
-    var firstName : String?
+    let id : String?
     
-    var lastName : String?
+    let createdAt : String?
     
-    var streetAddress : String? {
-        didSet {
-            if let address = streetAddress {
-                LocationCalculator.shared.coordinateFrom(address: address) { coordinate in
-                    self.longitude = coordinate.longitude
-                    self.latitude = coordinate.latitude
-                }
-            }
-        }
-    }
+    let updatedAt : String?
     
-    var longitude : Double?
+    let formOfAddress : String?
     
-    var latitude : Double?
+    let firstName : String?
     
-    var notes : String?
+    let maidenName : String?
     
-    var birthday : Date?
+    let lastName : String?
     
-    var id : String?
-    
-    var gender : String?
+    let birthdate : String?
 
+    let sex : String?
+    
+    let status : String?
+    
+    let religion : String?
+
+    let birthplace : String?
+    
+    let profession : String?
+
+    let nationalityCode : String?
+
+    let maritalStatus : String?
+    
+    let phoneNumber : String?
+    
+    let landlineNumber : String?
+
+    let faxNumber : String?
+    
+    let mobileNumber : String?
+    
+    let emailAddress : String?
+    
+    let illnessSeverity : String?
+
+    let address : AddressDto?
+    
+    let accessData : AccessDto?
+    
+    let healthConstitution : HealthConstitutionDto?
+    
+    let pharmacy : String?
+    
+    let familyDoctor : String?
+    
+    let personalSupporter : String?
+    
 }

@@ -21,13 +21,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
         
-        let accessToken : String? = KeychainWrapper.standard.string(forKey: "accessToken")
-        if accessToken != nil {
-            window?.rootViewController = UINavigationController(rootViewController: WelcomeController())
-            window?.makeKeyAndVisible()
+        if let expiresAt = UserDefaults.standard.integer(forKey: "expiresAt") as? Int {
+            let expire = expiresAt
+            let today : Int = Int(Date().timeIntervalSince1970)
+            if expire > today {
+                print(expiresAt)
+                moveToWelcomeController()
+            } else {
+                // try to reauthenticate
+                if let email = UserDefaults.standard.string(forKey: "email"), let password = UserDefaults.standard.string(forKey: "password") {
+                    APIManager.shared.signInCaretaker(email: email, password: password) { isSuccess, errorMessage in
+                        if isSuccess {
+                            DispatchQueue.main.async { [self] in
+                                self.moveToWelcomeController()
+                            }
+                        } else {
+                            self.moveToSignIn()
+                        }
+                    }
+                }
+            }
         } else {
-            window?.rootViewController = UINavigationController(rootViewController: SignInController())
-            window?.makeKeyAndVisible()
+            moveToSignIn()
         }
     }
 
@@ -57,6 +72,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    func moveToSignIn() {
+        window?.rootViewController = UINavigationController(rootViewController: SignInController())
+        window?.makeKeyAndVisible()
+    }
+    
+    func moveToWelcomeController() {
+        window?.rootViewController = UINavigationController(rootViewController: WelcomeController())
+        window?.makeKeyAndVisible()
     }
 
 

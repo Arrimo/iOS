@@ -16,7 +16,7 @@ final class EmployeeAPI {
     
     func fetchEmployeeInformation(onCompletion: @escaping (Employee) -> ()) {
         let semaphore = DispatchSemaphore (value: 0)
-        if let key = KeychainWrapper.standard.string(forKey: "accessToken") {
+        if let key = UserDefaults.standard.string(forKey: "accessToken") {
             do {
                 let jwt = try JWTDecode.decode(jwt: key)
                 guard let id = jwt.subject else {
