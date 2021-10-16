@@ -17,39 +17,30 @@ class TodayOverviewCell: UITableViewCell {
     
     var heightAnchorForTaskTextViewHeight : NSLayoutConstraint?
     
-    var event : Event? {
+    var visit : Visit? {
         didSet {
-            if let event = event {
+            if let visit = visit {
                 
                 // image view
-                profileImageView.image = UIImage(named: event.patient!.gender!)!
+                profileImageView.image = UIImage(named: visit.patient!.gender!)!
                 
                 // info textview
-                let startTime = Date(timeIntervalSince1970: Double(event.startTime!))
+                let startTime = visit.startTime!
                 let formatter = DateFormatter()
                 formatter.dateFormat = "HH:mm"
-                let attributedText = NSMutableAttributedString(string: event.patient!.firstName! + " " + event.patient!.lastName!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.kufamBold(size: 14)!])
+                let attributedText = NSMutableAttributedString(string: visit.patient!.firstName! + " " + visit.patient!.lastName!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.kufamBold(size: 14)!])
                 let appendedText = NSMutableAttributedString(string: "\n gu", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkBlue, NSAttributedString.Key.font : UIFont.kufamBold(size: 3)!])
-                let appendedText2 = NSMutableAttributedString(string: "\n\(formatter.string(from: startTime)) | \(event.patient!.streetAddress!)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.kufam(size: 10)!])
+                let appendedText2 = NSMutableAttributedString(string: "\n\(formatter.string(from: startTime)) | \(visit.patient!.streetAddress!)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.kufam(size: 10)!])
                 attributedText.append(appendedText)
                 attributedText.append(appendedText2)
                 infoTextView.attributedText = attributedText
                 
                 // tasks textview
-                if let tasksCompleted = event.tasks?.filter({ task in
-                    if task.isChecked! {
-                        return true
-                    } else {
-                        return false
-                    }
-                }) {
-                    let attributedText = NSMutableAttributedString()
-                    for task in tasksCompleted {
-                        attributedText.append(NSMutableAttributedString(string: "• \(task.title!)\n", attributes: [NSAttributedString.Key.font : UIFont.kufam(size: 12)!, NSAttributedString.Key.foregroundColor : UIColor.white]))
-                    }
-                    tasksTextView.attributedText = attributedText
-                    tasksTextView.heightAnchor.constraint(equalToConstant: estimateFrameForText(text: tasksTextView.text).height).isActive = true
+                let attributedText32 = NSMutableAttributedString()
+                for task in visit.tasks! {
+                    attributedText32.append(NSMutableAttributedString(string: "• \(task.title!)\n", attributes: [NSAttributedString.Key.font : UIFont.kufam(size: 12)!, NSAttributedString.Key.foregroundColor : UIColor.white]))
                 }
+                tasksTextView.attributedText = attributedText32
             }
         }
     }
@@ -68,7 +59,7 @@ class TodayOverviewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
-        imageView.backgroundColor = UIColor.white
+        imageView.backgroundColor = UIColor.mainOrange
         imageView.layer.cornerRadius = 15
         return imageView
     }()
@@ -117,16 +108,17 @@ class TodayOverviewCell: UITableViewCell {
         profileImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         
-//        mainView.addSubview(infoTextView)
-//        infoTextView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-//        infoTextView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 5).isActive = true
-//        infoTextView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -9).isActive = true
-//        infoTextView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//        
-//        mainView.addSubview(tasksTextView)
-//        tasksTextView.topAnchor.constraint(equalTo: infoTextView.bottomAnchor, constant: 8).isActive = true
-//        tasksTextView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 5).isActive = true
-//        tasksTextView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -9).isActive = true
+        mainView.addSubview(infoTextView)
+        infoTextView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 0).isActive = true
+        infoTextView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 9).isActive = true
+        infoTextView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -9).isActive = true
+        infoTextView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        mainView.addSubview(tasksTextView)
+        tasksTextView.topAnchor.constraint(equalTo: infoTextView.bottomAnchor, constant: 0).isActive = true
+        tasksTextView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 5).isActive = true
+        tasksTextView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -9).isActive = true
+        tasksTextView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -5).isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -134,11 +126,5 @@ class TodayOverviewCell: UITableViewCell {
     }
     
     // MARK: - Private Functions
-    
-    private func estimateFrameForText(text: String) -> CGRect {
-        let size = CGSize(width: 200, height: 1000)
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font : UIFont.kufam(size: 12)!, NSAttributedString.Key.foregroundColor : UIColor.white], context: nil)
-    }
 
 }

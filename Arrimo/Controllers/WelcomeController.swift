@@ -19,6 +19,10 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
     
     var visits : [Visit]?
     
+    var heightConstant : NSLayoutConstraint?
+    
+    var heightConstant2 : NSLayoutConstraint?
+    
     // MARK: - View Objects
     
     private let appIcon : UIImageView = {
@@ -92,8 +96,20 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
         let tableView = UITableView()
         tableView.register(TodayOverviewCell.self, forCellReuseIdentifier: TodayOverviewCell.identifier)
         tableView.backgroundColor = UIColor.clear
+//        tableView.isScrollEnabled = false
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
+    }()
+    
+    let tasksTextView : UITextView = {
+        let textView = UITextView()
+        textView.isEditable = false
+        textView.isSelectable = false
+        textView.textColor = UIColor.white
+        textView.backgroundColor = UIColor.clear
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
     }()
     
     // MARK: - Overriden Functions
@@ -134,54 +150,54 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
         welcomeLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
         welcomeLabel.heightAnchor.constraint(equalToConstant: 28).isActive = true
         welcomeLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        
+
         view.addSubview(divider1)
         divider1.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 23).isActive = true
         divider1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
         divider1.heightAnchor.constraint(equalToConstant: 1).isActive = true
         divider1.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        
+
         view.addSubview(mainButton)
         mainButton.topAnchor.constraint(equalTo: divider1.bottomAnchor, constant: 24).isActive = true
         mainButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
         mainButton.heightAnchor.constraint(equalToConstant: 47).isActive = true
         mainButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        
+
         view.addSubview(calendarButton)
         calendarButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: 14).isActive = true
         calendarButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
         calendarButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
         calendarButton.widthAnchor.constraint(equalToConstant: (view.frame.size.width - 63) / 2).isActive = true
-        
+
         view.addSubview(settingsButton)
         settingsButton.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: 14).isActive = true
         settingsButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
         settingsButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
         settingsButton.widthAnchor.constraint(equalToConstant: (view.frame.size.width - 63) / 2).isActive = true
-        
+
         view.addSubview(todayView)
         todayView.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: 24).isActive = true
         todayView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
         todayView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
         todayView.heightAnchor.constraint(equalToConstant: 325).isActive = true
-        
+
         todayView.addSubview(todayLabel)
         todayLabel.topAnchor.constraint(equalTo: todayView.topAnchor, constant: 15).isActive = true
         todayLabel.leftAnchor.constraint(equalTo: todayView.leftAnchor, constant: 14).isActive = true
         todayLabel.rightAnchor.constraint(equalTo: todayView.rightAnchor, constant: -14).isActive = true
         todayLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
-        
+
         todayView.addSubview(todaySepView)
         todaySepView.topAnchor.constraint(equalTo: todayLabel.bottomAnchor, constant: 15).isActive = true
         todaySepView.leftAnchor.constraint(equalTo: todayView.leftAnchor).isActive = true
         todaySepView.rightAnchor.constraint(equalTo: todayView.rightAnchor).isActive = true
         todaySepView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        
+
         todayView.addSubview(todayTableView)
         todayTableView.topAnchor.constraint(equalTo: todaySepView.bottomAnchor, constant: 11.5).isActive = true
         todayTableView.rightAnchor.constraint(equalTo: todayView.rightAnchor).isActive = true
         todayTableView.leftAnchor.constraint(equalTo: todayView.leftAnchor).isActive = true
-        todayTableView.bottomAnchor.constraint(equalTo: todayView.bottomAnchor, constant: -12).isActive = true
+        todayTableView.bottomAnchor.constraint(equalTo: todayView.bottomAnchor, constant: -9).isActive = true
     }
     
     // MARK: - Private Functions
@@ -218,7 +234,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
                 patient1.lastName = "Doe"
                 patient1.notes = "Loves apples"
                 patient1.id = "PATIENT-ID-2021"
-                patient1.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
+                patient1.streetAddress = "Bayernstraße 18"
                 patient1.birthday = Date()
                 patient1.gender = "male"
                 
@@ -233,14 +249,34 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
                 let task3 = Task1()
                 task3.title = "Cook Dinner"
                 task3.duration = 30
+
+                let task4 = Task1()
+                task4.title = "Bath Time"
+                task4.duration = 20
+
+                let task5 = Task1()
+                task5.title = "Read Book"
+                task5.duration = 20
                 
                 let visit = Visit()
                 visit.employee = RunningInfo.shared.employee
                 visit.patient = patient1
                 visit.startTime = Date()
-                visit.tasks = [task1, task2, task3]
+                visit.tasks = [task1, task2]
                 
-                self.visits = [visit]
+                let visit2 = Visit()
+                visit2.employee = RunningInfo.shared.employee
+                visit2.patient = patient1
+                visit2.startTime = Date()
+                visit2.tasks = [task1, task2, task3, task4, task5]
+                
+                let visit3 = Visit()
+                visit3.employee = RunningInfo.shared.employee
+                visit3.patient = patient1
+                visit3.startTime = Date()
+                visit3.tasks = [task1, task2, task3, task4, task5]
+                
+                self.visits = [visit, visit2, visit3]
                 self.todayTableView.reloadData()
             }
         }
@@ -273,7 +309,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
         patient1.lastName = "Doe"
         patient1.notes = "Loves apples"
         patient1.id = "PATIENT-ID-2021"
-        patient1.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
+        patient1.streetAddress = "198 E Fremont Ave, Elmhurst 60126 USA"
         patient1.birthday = Date()
         patient1.gender = "male"
         
@@ -282,7 +318,7 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
         patient2.lastName = "Pearlman"
         patient2.notes = "Loves Alabama"
         patient2.id = "PATIENT-ID-2021-ALAMABA"
-        patient2.streetAddress = "Bayernstraße 18, Haimhausen 85778 Deutschland"
+        patient2.streetAddress = "198 E Fremont Ave, Elmhurst 60126 USA"
         patient2.birthday = Date()
         patient2.gender = "female"
         
@@ -324,6 +360,12 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
         todayTableView.dataSource = self
     }
     
+    private func estimateHeightForCell(text: String) -> Int {
+        let size = CGSize(width: 200, height: 1000)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        return Int(NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font : UIFont.kufam(size: 12)!, NSAttributedString.Key.foregroundColor : UIColor.white], context: nil).height)
+    }
+    
     // MARK: - Objective-C Functions
     
     @objc func mainButtonPressed() {
@@ -361,11 +403,24 @@ class WelcomeController: UIViewController, CLLocationManagerDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TodayOverviewCell.identifier, for: indexPath) as! TodayOverviewCell
+        cell.visit = visits![indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 114 + 9
+        if let visits = visits {
+            let attributedText32 = NSMutableAttributedString()
+            for task in visits[indexPath.row].tasks! {
+                attributedText32.append(NSMutableAttributedString(string: "• \(task.title!)\n", attributes: [NSAttributedString.Key.font : UIFont.kufam(size: 12)!, NSAttributedString.Key.foregroundColor : UIColor.white]))
+            }
+            tasksTextView.attributedText = attributedText32
+            let height = CGFloat(estimateHeightForCell(text: tasksTextView.text))
+            let bottomPadding : CGFloat = 63
+            let final = height + bottomPadding
+            return final
+        } else {
+            return 114 + 9
+        }
     }
 
 }
